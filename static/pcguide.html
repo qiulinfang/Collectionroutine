@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pc预览</title>
+    <style>
+      html,
+      body {
+        padding: 0;
+        margin: 0;
+      }
+
+      .pc-preview {
+        min-width: 960px;
+        max-width: 1024px;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        margin: 0 auto;
+      }
+
+      .pc-preview .left {
+        width: 50%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .pc-preview .left p {
+        font-weight: bold;
+      }
+
+      .pc-preview .left img {
+        width: 240px;
+        height: 240px;
+      }
+
+      .pc-preview .right {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .pc-preview .right iframe {
+        width: 375px;
+        height: 667px;
+        box-shadow: 0 10px 20px rgb(0 0 0 / 7%);
+        border-radius: 10px;
+        flex-shrink: 0;
+
+      }
+
+      .pc-preview .right .btn {
+        width: 120px;
+        height: 48px;
+        border-radius: 8px;
+        background-color: #42b983;
+        color: white;
+        line-height: 48px;
+        text-align: center;
+        cursor: pointer;
+        margin-top: 24px;
+      }
+    </style>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  </head>
+  <div class="pc-preview">
+    <div class="left">
+      <img src="/static/qr.png" alt="">
+      <p>请使用手机浏览器，扫描上方二维码预览</p>
+      <p>PC浏览器，请打开控制台并切换至手机模式后并再次刷新浏览。</p>
+
+    </div>
+    <div class="right">
+      <iframe id="myIframe"  src="https://campus.change.tm" frameborder="0"></iframe>
+    </div>
+  </div>
+
+  <body>
+    <script>
+      function browserRedirect() {
+        let sUserAgent = navigator.userAgent.toLowerCase();
+        if (/ipad|iphone|midp|rv:1.2.3.4|ucweb|android|windows ce|windows mobile/.test(sUserAgent)) {
+          //跳转移动端页面
+          window.location.href = "https://campus.change.tm";
+        } else {
+          // $.ajax({
+          //   type: "GET",
+          //   url: "http://localhost:8080",
+          //   contentType: "application/json",
+          //   beforeSend: function(xhr, settings) {
+          //     xhr.setRequestHeader("show_mobile", "true");
+          //   },
+          //   success: function(data) {
+          //     let iframe = $("#myIframe");
+          //     iframe.contentWindow.contents = data;
+          //     iframe.src = 'javascript:window["contents"]';
+          //   }
+          // });
+        }
+      }
+      browserRedirect();
+    </script>
+  </body>
+
+</html>

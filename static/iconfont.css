@@ -1,0 +1,115 @@
+@font-face {
+	font-family: "iconfont";
+	/* Project id 3658567 */
+	src: url('/static/font/iconfont.ttf') format('truetype');
+}
+
+.iconfont {
+	font-family: "iconfont" !important;
+	font-size: 16px;
+	font-style: normal;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+.icon-close:before {
+  content: "\e61f";
+}
+.icon-like-selected:before {
+	content: "\e61e";
+}
+
+.icon-edit:before {
+	content: "\e61d";
+}
+
+.icon-commodity:before {
+	content: "\e610";
+}
+
+.icon-home-selected:before {
+	content: "\e611";
+}
+
+.icon-mine:before {
+	content: "\e612";
+}
+
+.icon-commodity-selected:before {
+	content: "\e613";
+}
+
+.icon-message:before {
+	content: "\e614";
+}
+
+.icon-mine-selected:before {
+	content: "\e615";
+}
+
+.icon-message-selected:before {
+	content: "\e616";
+}
+
+.icon-home:before {
+	content: "\e61c";
+}
+
+.icon-attestation:before {
+	content: "\e617";
+}
+
+.icon-contact:before {
+	content: "\e618";
+}
+
+.icon-gift:before {
+	content: "\e619";
+}
+
+.icon-Shopping:before {
+	content: "\e61a";
+}
+
+.icon-feedback:before {
+	content: "\e61b";
+}
+
+.icon-top:before {
+	content: "\e60e";
+}
+
+.icon-delete:before {
+	content: "\e60b";
+}
+
+.icon-add:before {
+	content: "\e60c";
+}
+
+.icon-menu:before {
+	content: "\e607";
+}
+
+.icon-cross:before {
+	content: "\e608";
+}
+
+.icon-sending:before {
+	content: "\e609";
+}
+
+.icon-back:before {
+	content: "\e60a";
+}
+
+.icon-forward:before {
+	content: "\e605";
+}
+
+.icon-comment:before {
+	content: "\e606";
+}
+
+.icon-like:before {
+	content: "\e604";
+}

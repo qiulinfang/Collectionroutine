@@ -1,0 +1,19 @@
+/* 引入字体图标样式文件 */
+@import "@/common/css/color.scss";
+/* 引入颜色公共样式文件 */
+@import "@/common/css/iconfont.css";
+
+text {
+  font-family: 'Source Han Sans CN';
+}
+
+html {
+  background: #e8ebed;
+  font-family: 'Source Han Sans CN';
+}
+
+image {
+  will-change: transform;
+  width: auto;
+  height: auto;
+}

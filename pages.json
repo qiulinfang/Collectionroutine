@@ -1,0 +1,63 @@
+{
+	"pages": [{
+			"path": "pages/my/my",
+			"style": {
+				"navigationBarTitleText": ""
+			}
+		},
+		{
+			"path": "pages/ershou/ershou",
+			"style": {
+				"navigationBarTitleText": ""
+			}
+		},
+		{
+			"path": "pages/shequ/shequ",
+			"style": {
+				"navigationBarTitleText": ""
+			}
+		},
+		{
+			"path": "pages/xiaoxi/xiaoxi",
+			"style": {
+				"navigationBarTitleText": ""
+			}
+		}
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "uni-app",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	},
+	"uniIdRouter": {},
+	"tabBar": {
+		"color": "#7A7E83",
+		"selectedColor": "#3cc51f",
+		"borderStyle": "black",
+		"list": [{
+				"pagePath": "pages/shequ/shequ",
+				"text": "shequ",
+				"iconPath": "static/tab-icons/community.png",
+				"selectedIconPath": "static/tab-icons/community-active.png"
+			}, {
+				"pagePath": "pages/ershou/ershou",
+				"text": "ershou",
+				"iconPath": "static/tab-icons/used.png",
+				"selectedIconPath": "static/tab-icons/used-active.png"
+			},
+			{
+				"pagePath": "pages/xiaoxi/xiaoxi",
+				"text": "xiaoxi",
+				"iconPath": "static/tab-icons/news.png",
+				"selectedIconPath": "static/tab-icons/news-active.png"
+			},
+			{
+				"pagePath": "pages/my/my",
+				"text": "my",
+				"iconPath": "static/tab-icons/my.png",
+				"selectedIconPath": "static/tab-icons/my-active.png"
+			}
+		]
+	}
+}
