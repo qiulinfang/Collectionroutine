@@ -76,7 +76,7 @@
 							url: 'http://localhost:3000/article-classify-label-list'
 						})
 					]);
-					this.pageList = data1.data.pageContent;
+					this.pageList = data1.data;
 					this.categories = data2.data;
 					console.log(this.categories)
 				} catch (error) {

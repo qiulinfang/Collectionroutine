@@ -12,7 +12,7 @@
 						@click="toggleEdit('userName')">
 					</uni-icons>
 				</view>
-				<input v-show="editStates.userName" ref="userName" :value="editDataObj.userName" type="text"
+				<input v-show="editStates.userName" focus='true' ref="userName" :value="editDataObj.userName" type="text"
 					v-model="editDataObj.userName" style="text-align: center;" placeholder="请输入文字"
 					@blur="handleBlur('userName')" />
 				<view class="error-message" v-if="errorMessage">{{ errorMessage }}</view>
