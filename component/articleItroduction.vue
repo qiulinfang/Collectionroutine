@@ -1,5 +1,5 @@
 <template>
-	<view class="container">
+	<view class="pageIntroductionContainer">
 		<view class="content-header">
 			<img class="userinfoavatar" :src="pageData.user.avatar" alt="" />
 			<view class="userinfomiddle">
@@ -78,8 +78,12 @@
 </script>
 
 <style>
-	.container {
+	.pageIntroductionContainer {
 		box-shadow: 3px 3px 2px 0 rgba(0, 0, 0, 0.1);
+		background-color: white;
+		border-radius: 10rpx;
+		padding: 30rpx 20rpx;
+		margin: 20rpx 0 0 0;
 	}
 
 	.content-header {

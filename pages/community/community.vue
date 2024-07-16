@@ -9,14 +9,9 @@
 				<topNavBar :categories="categories" @indexChange='changPage'></topNavBar>
 			</view>
 			<view class="content">
-				<view class="generalRecommendations" v-if="currentTab === 0">
-					<block v-for="(item, index) in pageList" :key="index">
-						<articleItroduction class="generalRecommendationsPage" :pageData='item'></articleItroduction>
-					</block>
-					<view class="myFollows" v-if="currentTab === 1">这里是 myFollows</view>
-					<view class="confessionWall" v-if="currentTab === 2">这里是 confessionWall</view>
-					<view class="professionalExchange" v-if="currentTab === 3">这里是 professionalExchange</view>
-				</view>
+				<block v-for="(item, index) in filteredArticles" :key="index">
+					<articleItroduction :pageData='item'></articleItroduction>
+				</block>
 			</view>
 		</view>
 	</view>
@@ -45,11 +40,16 @@
 			return {
 				navigationBarHeight: 0,
 				value: '',
-				currentTab:0,
+				currentTab: 0,
 				page: 1,
 				pageList: [],
 				categories: [],
 			}
+		},
+		computed: {
+			filteredArticles() {
+				return this.pageList.filter(item => item.family.familyId ===this.currentTab);
+			},
 		},
 		onLoad: function(options) {
 			console.log('onload函数执行了')
@@ -123,9 +123,10 @@
 					url: '/pages/community/publishPage/publishPage'
 				});
 			},
-			changPage(index){
+			changPage(index) {
 				this.scrollToTop();
 				this.currentTab = index;
+				this.fetchData();
 			}
 		}
 	}
@@ -152,13 +153,6 @@
 
 	.community-header-img {
 		width: 300rpx;
-	}
-
-	.generalRecommendationsPage {
-		background-color: white;
-		border-radius: 10rpx;
-		padding: 30rpx 20rpx;
-		margin: 20rpx 0 0 0;
 	}
 
 

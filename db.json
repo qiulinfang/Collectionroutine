@@ -1075,7 +1075,7 @@
 					"imageLink": null
 				},
 				"family": {
-					"familyId": 3,
+					"familyId": 0,
 					"familyName": "表白墙"
 				},
 				"likeStatus": false,
@@ -1245,7 +1245,7 @@
 					"imageLink": null
 				},
 				"family": {
-					"familyId": 3,
+					"familyId": 2,
 					"familyName": "表白墙"
 				},
 				"likeStatus": false,
@@ -1314,6 +1314,40 @@
 				},
 				"family": {
 					"familyId": 3,
+					"familyName": "表白墙"
+				},
+				"likeStatus": false,
+				"fansState": false,
+				"privateState": "0",
+				"mutualConcern": false,
+				"articleId": "1611279468427517954"
+			},
+			{
+				"article": {
+					"title": "1231",
+					"content": "23",
+					"createTime": "1672993936041",
+					"commentNum": 0,
+					"viewsNum": 1,
+					"shareNum": 0,
+					"likeNum": 0
+				},
+				"user": {
+					"userId": "1610801362600222722",
+					"userName": "未设置用户名",
+					"classId": "2",
+					"phoneNumber": "",
+					"signature": "123",
+					"fansNum": 0,
+					"sex": "0",
+					"avatar": "https://qj-school.oss-cn-beijing.aliyuncs.com/2023-01-06/308fc78b738e490299eff8441d042086avatar.png"
+				},
+				"image": {
+					"articleImageId": null,
+					"imageLink": null
+				},
+				"family": {
+					"familyId": 0,
 					"familyName": "表白墙"
 				},
 				"likeStatus": false,
