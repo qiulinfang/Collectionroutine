@@ -12,7 +12,7 @@
 						<view class="user-ids">ID：100019</view>
 					</view>
 				</view>
-				<view class="user-info-right-box">
+				<view class="user-info-right-box" @click="handleJumpPage('/pages/my/material/material')" >
 					<text class="text">个人资料</text>
 					<uni-icons class="right-icon" type="right"></uni-icons>
 				</view>
@@ -32,9 +32,7 @@
 				</view>
 			</view>
 		</view>
-		<view class="ellipse">
-
-		</view>
+		<view class="ellipse"></view>
 		<view class="my-functions">
 			<block v-for="(item,index) in contentNavList" :key="index">
 				<view @click="handleJumpPage(item.url)">
@@ -129,12 +127,25 @@
 			},
 			close() {
 				this.$refs.popup.close()
+			},
+			handleJumpPage(url) {
+				uni.navigateTo({
+					url,
+					success: function(res) {
+						// 跳转成功后的回调函数
+						console.log('跳转成功');
+					},
+					fail: function(err) {
+						// 跳转失败后的回调函数
+						console.log('跳转失败', err);
+					}
+				});
 			}
 		}
 	}
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 	.header {
 		background-color: #3FD3D1;
 	}
@@ -165,9 +176,9 @@
 	.user-data {
 		display: flex;
 		justify-content: space-around;
-		margin-top: 50rpx ;
-		margin-right: 50rpx ;
-		margin-left: 50rpx ;
+		margin-top: 50rpx;
+		margin-right: 50rpx;
+		margin-left: 50rpx;
 
 		.user-data-count {
 			margin-bottom: 20rpx;

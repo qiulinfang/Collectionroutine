@@ -3,24 +3,60 @@
 			"path": "pages/my/my",
 			"style": {
 				"navigationBarTitleText": ""
+				// "navigationStyle":"custom"  //自定义头部去掉默认头部导航
 			}
 		},
 		{
 			"path": "pages/ershou/ershou",
 			"style": {
 				"navigationBarTitleText": ""
-			}
-		},
-		{
-			"path": "pages/shequ/shequ",
-			"style": {
-				"navigationBarTitleText": ""
+				// "navigationStyle":"custom"  //自定义头部去掉默认头部导航
 			}
 		},
 		{
 			"path": "pages/xiaoxi/xiaoxi",
 			"style": {
 				"navigationBarTitleText": ""
+				// "navigationStyle":"custom"  //自定义头部去掉默认头部导航
+			}
+		},
+		{
+			"path" : "pages/my/material/material",
+			"style" : 
+			{
+				"navigationBarTitleText" : ""
+				// "navigationStyle":"custom"  //自定义头部去掉默认头部导航
+			}
+		},
+		{
+			"path" : "pages/community/community",
+			"style" : 
+			{
+				"navigationBarTitleText" : ""
+				// "navigationStyle":"custom"  //自定义头部去掉默认头部导航
+			}
+		},
+		{
+			"path" : "pages/community/searchPage/searchPage",
+			"style" : 
+			{
+				"navigationBarTitleText" : ""
+				// "navigationStyle":"custom"  //自定义头部去掉默认头部导航
+			}
+		},
+		{
+			"path" : "pages/community/articleDetail/articleDetail",
+			"style" : 
+			{
+				"navigationBarTitleText" : ""
+				// "navigationStyle":"custom"  //自定义头部去掉默认头部导航
+			}
+		},
+		{
+			"path" : "component/test/test",
+			"style" : 
+			{
+				"navigationBarTitleText" : ""
 			}
 		}
 	],
@@ -36,8 +72,8 @@
 		"selectedColor": "#3cc51f",
 		"borderStyle": "black",
 		"list": [{
-				"pagePath": "pages/shequ/shequ",
-				"text": "shequ",
+				"pagePath": "pages/community/community",
+				"text": "community",
 				"iconPath": "static/tab-icons/community.png",
 				"selectedIconPath": "static/tab-icons/community-active.png"
 			}, {
