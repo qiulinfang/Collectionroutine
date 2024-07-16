@@ -6,13 +6,7 @@
 				<uni-easyinput prefixIcon="search" v-model="value" placeholder="左侧图标" @iconClick="handleSearchClick"
 					@focus="handleSearchClick">
 				</uni-easyinput>
-				<scroll-view class="scroll-view_H" scroll-x="true" @scroll="scroll" scroll-left="120" show-scrollbar="false">
-					<view :class="{active: currentTab === index}" class="scroll-view-item_H" v-for="(item, index) in categories"
-						@click="changeCategory(index)">
-						{{ item.name }}
-					</view>
-
-				</scroll-view>
+				<topNavBar :categories="categories" @indexChange='changPage'></topNavBar>
 			</view>
 			<view class="content">
 				<view class="generalRecommendations" v-if="currentTab === 0">
@@ -26,13 +20,23 @@
 			</view>
 		</view>
 	</view>
+	<view class="xuanfu">
+		<view class="xuanfu-item" @click="scrollToTop">
+			<uni-icons type="arrow-up" size="30"></uni-icons>
+		</view>
+		<view class="xuanfu-item" @click="goToPublishPage">
+			<uni-icons type="paperplane" size="30"></uni-icons>
+		</view>
+	</view>
 </template>
 
 <script>
 	import articleItroduction from '/component/articleItroduction.vue';
+	import topNavBar from '/component/topNavBar.vue';
 	export default {
 		components: {
-			articleItroduction
+			articleItroduction,
+			topNavBar
 		},
 		props: {
 			list: Array,
@@ -41,71 +45,10 @@
 			return {
 				navigationBarHeight: 0,
 				value: '',
-				currentTab: 0,
+				currentTab:0,
 				page: 1,
 				pageList: [],
-				categories: [{
-						name: '综合推荐',
-						id: 0
-					},
-					{
-						name: '我的关注',
-						id: 1
-					},
-					{
-						name: '表白墙',
-						id: 2
-					},
-					{
-						name: '专业交流',
-						id: 3
-					}
-				],
-				list: [{
-						url: '/static/logo.png',
-						text: 'Grid 1',
-						badge: '0',
-						type: "primary"
-					},
-					{
-						url: '/static/logo.png',
-						text: 'Grid 2',
-						badge: '1',
-						type: "success"
-					},
-					{
-						url: '/static/logo.png',
-						text: 'Grid 3',
-						badge: '99',
-						type: "warning"
-					},
-					{
-						url: '/static/logo.png',
-						text: 'Grid 4',
-						badge: '2',
-						type: "error"
-					},
-					{
-						url: '/static/logo.png',
-						text: 'Grid 5'
-					},
-					{
-						url: '/static/logo.png',
-						text: 'Grid 6'
-					},
-					{
-						url: '/static/logo.png',
-						text: 'Grid 7'
-					},
-					{
-						url: '/static/logo.png',
-						text: 'Grid 8'
-					},
-					{
-						url: '/static/logo.png',
-						text: 'Grid 9'
-					}
-				]
+				categories: [],
 			}
 		},
 		onLoad: function(options) {
@@ -124,22 +67,21 @@
 		},
 		methods: {
 			async fetchData() {
-				const url = `http://localhost:3000/IntactArticleuser-article`;
-				const res = await uni.request({
-					url,
-					method: 'GET',
-					success: (res) => {
-						if (res.statusCode === 200) {
-							this.pageList = res.data.pageContent;
-						} else {
-							console.error('请求失败，状态码:', res.statusCode);
-						}
-					},
-					fail: (err) => {
-						console.error('请求失败:', err);
-					},
-				});
-
+				try {
+					const [data1, data2] = await Promise.all([
+						uni.request({
+							url: 'http://localhost:3000/IntactArticleuser-article'
+						}),
+						uni.request({
+							url: 'http://localhost:3000/article-classify-label-list'
+						})
+					]);
+					this.pageList = data1.data.pageContent;
+					this.categories = data2.data;
+					console.log(this.categories)
+				} catch (error) {
+					console.error('请求失败:', error);
+				}
 			},
 			handleSearchClick() {
 				uni.navigateTo({
@@ -167,20 +109,29 @@
 					}
 				});
 			},
-			changeCategory(index) {
-				this.currentTab = index;
-				this.page = 1;
+			scrollToTop() {
+				console.log('回到顶部按钮被点击')
 				uni.pageScrollTo({
-					scrollTop: 0, // 滚动到顶部
-					duration: 300 // 动画持续时间为300毫秒
+					scrollTop: 0, // 设置scrollTop为0，意味着滚动到页面顶部
+					duration: 300 // 动画持续时间，单位毫秒
 				});
-				this.fetchData();
 			},
+
+			goToPublishPage() {
+				console.log('navigateTo事件触发')
+				uni.navigateTo({
+					url: '/pages/community/publishPage/publishPage'
+				});
+			},
+			changPage(index){
+				this.scrollToTop();
+				this.currentTab = index;
+			}
 		}
 	}
 </script>
 
-<style>
+<style scoped lang="scss">
 	.container {
 		background-color: azure;
 		height: 100%;
@@ -207,39 +158,27 @@
 		background-color: white;
 		border-radius: 10rpx;
 		padding: 30rpx 20rpx;
-		margin: 10rpx 0 0 0;
-	}
-
-	.scroll-view_H {
-		white-space: nowrap;
-		width: 100%;
-	}
-
-	.scroll-view-item {
-		height: 100rpx;
-		text-align: center;
-		font-size: 36rpx;
-	}
-
-	.scroll-view-item_H {
-		display: inline-block;
-		width: 25%;
-		height: 100rpx;
-		line-height: 100rpx;
-		text-align: center;
-		font-size: 36rpx;
+		margin: 20rpx 0 0 0;
 	}
 
 
-	.scroll-view_H .active {
-		color: red;
-		/* 当前选中的分类高亮显示 */
-	}
+	.xuanfu {
+		position: fixed;
+		bottom: 10%;
+		right: 3%;
+		display: flex;
+		flex-direction: column;
 
-
-	.userinfoavatar {
-		width: 80rpx;
-		height: 80rpx;
-		border-radius: 50%;
+		.xuanfu-item {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 90rpx;
+			height: 90rpx;
+			border-radius: 50%;
+			background-color: white;
+			box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, 0.1);
+			margin-top: 5rpx;
+		}
 	}
 </style>

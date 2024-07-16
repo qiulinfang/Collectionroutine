@@ -15,10 +15,10 @@
 			</view>
 		</view>
 		<view class="content-middle">
-			<view class="title">
+			<view class="title" @click="goToArticleDetail">
 				{{pageData.article.title}}
 			</view>
-			<view class="wenzhangneirong">
+			<view class="wenzhangneirong" @click="goToArticleDetail">
 				{{pageData.article.content}}
 			</view>
 			<uni-grid :column="3" :highlight="true" @change="change">
@@ -56,12 +56,32 @@
 		},
 		data() {},
 		methods: {
-
+			goToArticleDetail() {
+				
+				try {
+					uni.navigateTo({
+						url: "/pages/community/articleDetail/articleDetail",
+						success: function(res) {
+							console.log('跳转成功')
+						},
+						fail: function(err) {
+							console.log('跳转失败')
+							console.log(err)
+						},
+					});
+				} catch (error) {
+					console.log(error)
+				}
+			}
 		}
 	}
 </script>
 
 <style>
+	.container {
+		box-shadow: 3px 3px 2px 0 rgba(0, 0, 0, 0.1);
+	}
+
 	.content-header {
 		display: flex;
 		position: relative;

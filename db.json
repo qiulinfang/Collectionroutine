@@ -1389,42 +1389,35 @@
 	"article-like-articleId": {
 		"name": "typicode"
 	},
-	"article-classify-label-list": {
-		"success": true,
-		"code": 200,
-		"message": "成功",
-		"data": {
-			"labelList": [{
-					"familyId": "0",
-					"familyName": "综合推荐",
-					"createTime": null,
-					"updateTime": null,
-					"type": 1
-				},
-				{
-					"familyId": "1",
-					"familyName": "我的关注",
-					"createTime": null,
-					"updateTime": null,
-					"type": 1
-				},
-				{
-					"familyId": "3562519823581335567",
-					"familyName": "表白墙",
-					"createTime": "",
-					"updateTime": "",
-					"type": 0
-				},
-				{
-					"familyId": "4321519823581335552",
-					"familyName": "专业交流",
-					"createTime": "",
-					"updateTime": "",
-					"type": 0
-				}
-			]
+	"article-classify-label-list": [{
+			"familyId": "0",
+			"familyName": "综合推荐",
+			"createTime": null,
+			"updateTime": null,
+			"type": 1
+		},
+		{
+			"familyId": "1",
+			"familyName": "我的关注",
+			"createTime": null,
+			"updateTime": null,
+			"type": 1
+		},
+		{
+			"familyId": "3562519823581335567",
+			"familyName": "表白墙",
+			"createTime": "",
+			"updateTime": "",
+			"type": 0
+		},
+		{
+			"familyId": "4321519823581335552",
+			"familyName": "专业交流",
+			"createTime": "",
+			"updateTime": "",
+			"type": 0
 		}
-	},
+	],
 	"IntactArticlehottestRecommendation": {
 		"name": "typicode"
 	},
