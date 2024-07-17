@@ -608,8 +608,7 @@
 			}
 		}
 	},
-	"IntactArticleuser-article": [
-		{
+	"IntactArticleuser-article": [{
 			"article": {
 				"title": "好消息！好消息",
 				"content": "今日消息六月底",
@@ -984,59 +983,52 @@
 			"articleId": "1611279468427517954"
 		}
 	],
-	"useractiveUser": {
-		"success": true,
-		"code": 200,
-		"message": "成功",
-		"data": {
-			"activeUser": [{
-					"fansNum": 4,
-					"sex": "0",
-					"fansState": true,
-					"avatar": "https://thirdwx.qlogo.cn/mmopen/vi_32/WQxaejTiaKZINeT2ibLhXl2kmGa3TvYiakmbCjPXRyXoH7Udl0GLoy7925MT2RIQh8gJf2Bgpo9oTz2YxQiaLm98icg/132",
-					"userName": "True",
-					"userId": "1570565996438142977",
-					"mutualConcern": false
-				},
-				{
-					"fansNum": 4,
-					"sex": "0",
-					"fansState": false,
-					"avatar": "https://thirdwx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTKOHxVZKoHOYMJyfAp8Jqql16OdwDXLc9E3hf8NIVshwoKqbBcLftDVQia9oNgqKnPtelgXUzv9geQ/132",
-					"userName": "chunshan",
-					"userId": "1570573572345217025",
-					"mutualConcern": false
-				},
-				{
-					"fansNum": 5,
-					"sex": "2",
-					"fansState": false,
-					"avatar": "https://qj-school.oss-cn-beijing.aliyuncs.com/2022-09-19/c0ee6f2762a64fabac7dc4542d4589fdtmp_4e040f7a4a04141ba18f50a2692c79287f076aecc9cfe997.jpg",
-					"userName": "侯翠翠女士",
-					"userId": "1571675256979030017",
-					"mutualConcern": false
-				},
-				{
-					"fansNum": 3,
-					"sex": "0",
-					"fansState": false,
-					"avatar": "https://thirdwx.qlogo.cn/mmopen/vi_32/bDiblSkLbEgYqIbIlnfTINgyiaKgpXBjGGZ6Ed5DiaIUvj1vzFtI4H74mlEFtMhsFdp8CdJrTnMOibfpJwiaj8s0n0Q/132",
-					"userName": "C°冷咖啡",
-					"userId": "1571677958937083905",
-					"mutualConcern": false
-				},
-				{
-					"fansNum": 3,
-					"sex": "0",
-					"fansState": true,
-					"avatar": "https://thirdwx.qlogo.cn/mmopen/vi_32/DYAIOgq83eoSaEu4zZM17Mf3N21iborBzvLwITPQJSIBPKMM0eaicnTBoJPhSiccqE33FtJrIKGlsWv5pb89fGZNg/132",
-					"userName": "Aғᴛᴇʀᴡᴀʀᴅs .ᯤ⁵ᴳ",
-					"userId": "1571678976747864065",
-					"mutualConcern": false
-				}
-			]
+	"useractiveUser": [{
+			"fansNum": 4,
+			"sex": "0",
+			"fansState": true,
+			"avatar": "https://thirdwx.qlogo.cn/mmopen/vi_32/WQxaejTiaKZINeT2ibLhXl2kmGa3TvYiakmbCjPXRyXoH7Udl0GLoy7925MT2RIQh8gJf2Bgpo9oTz2YxQiaLm98icg/132",
+			"userName": "True",
+			"userId": "1570565996438142977",
+			"mutualConcern": false
+		},
+		{
+			"fansNum": 4,
+			"sex": "0",
+			"fansState": false,
+			"avatar": "https://thirdwx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTKOHxVZKoHOYMJyfAp8Jqql16OdwDXLc9E3hf8NIVshwoKqbBcLftDVQia9oNgqKnPtelgXUzv9geQ/132",
+			"userName": "chunshan",
+			"userId": "1570573572345217025",
+			"mutualConcern": false
+		},
+		{
+			"fansNum": 5,
+			"sex": "1",
+			"fansState": false,
+			"avatar": "https://thirdwx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTKOHxVZKoHOYMJyfAp8Jqql16OdwDXLc9E3hf8NIVshwoKqbBcLftDVQia9oNgqKnPtelgXUzv9geQ/132",
+			"userName": "侯翠翠女士",
+			"userId": "1571675256979030017",
+			"mutualConcern": false
+		},
+		{
+			"fansNum": 3,
+			"sex": "0",
+			"fansState": false,
+			"avatar": "https://thirdwx.qlogo.cn/mmopen/vi_32/bDiblSkLbEgYqIbIlnfTINgyiaKgpXBjGGZ6Ed5DiaIUvj1vzFtI4H74mlEFtMhsFdp8CdJrTnMOibfpJwiaj8s0n0Q/132",
+			"userName": "C°冷咖啡",
+			"userId": "1571677958937083905",
+			"mutualConcern": false
+		},
+		{
+			"fansNum": 3,
+			"sex": "1",
+			"fansState": true,
+			"avatar": "https://thirdwx.qlogo.cn/mmopen/vi_32/DYAIOgq83eoSaEu4zZM17Mf3N21iborBzvLwITPQJSIBPKMM0eaicnTBoJPhSiccqE33FtJrIKGlsWv5pb89fGZNg/132",
+			"userName": "Aғᴛᴇʀᴡᴀʀᴅs .ᯤ⁵ᴳ",
+			"userId": "1571678976747864065",
+			"mutualConcern": false
 		}
-	},
+	],
 	"article-like-articleId": {
 		"name": "typicode"
 	},
@@ -1069,9 +1061,35 @@
 			"type": 0
 		}
 	],
-	"IntactArticlehottestRecommendation": {
-		"name": "typicode"
-	},
+	"IntactArticlehottestRecommendation": [{
+			"articleId": "161311",
+			"title": "231"
+		},
+		{
+			"articleId": "1573192340472885249",
+			"title": "刚发的"
+		},
+		{
+			"articleId": "1573192340472882249",
+			"title": "计划刚发的"
+		},
+		{
+			"articleId": "157319233472885249",
+			"title": "水电费更好"
+		},
+		{
+			"articleId": "1573192340422885249",
+			"title": "出点肉分工表"
+		},
+		{
+			"articleId": "1573132340472885249",
+			"title": "你还跟他热镀锌"
+		},
+		{
+			"articleId": "1573192340172885249",
+			"title": "许多人提供和你"
+		}
+	],
 	"IntactArticlecontentPrompt": {
 		"name": "typicode"
 	},
