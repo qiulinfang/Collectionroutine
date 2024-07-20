@@ -12,7 +12,7 @@
 						@click="toggleEdit('userName')">
 					</uni-icons>
 				</view>
-				<input v-show="editStates.userName" focus='true' ref="userName" :value="editDataObj.userName" type="text"
+				<input v-show="editStates.userName" focus='true' ref="userName"  type="text"
 					v-model="editDataObj.userName" style="text-align: center;" placeholder="请输入文字"
 					@blur="handleBlur('userName')" />
 				<view class="error-message" v-if="errorMessage">{{ errorMessage }}</view>
@@ -24,7 +24,7 @@
 						@click="toggleEdit('userSignature')">
 					</uni-icons>
 				</view>
-				<input v-show="editStates.userSignature" ref="userSignature" :value="editDataObj.userSignature" type="text"
+				<input v-show="editStates.userSignature" ref="userSignature"  type="text"
 					v-model="editDataObj.userSignature" style="text-align: center;" placeholder="请输入文字"
 					@blur="handleBlur('userSignature')" />
 			</view>
@@ -58,7 +58,7 @@
 			<view class="contentItemLeft">手机号</view>
 			<view class="contentItemMiddle">
 				<view v-show="!editStates.userPhone">{{editDataObj.userPhone}}</view>
-				<input v-show="editStates.userPhone" ref="userPhone" :value="editDataObj.userPhone" type="text"
+				<input v-show="editStates.userPhone" ref="userPhone"  type="text"
 					v-model="editDataObj.userPhone" style="text-align: center;" placeholder="请输入文字"
 					@blur="handleBlur('userPhone')" />
 			</view>
@@ -72,7 +72,7 @@
 			<view class="contentItemLeft">微信号</view>
 			<view class="contentItemMiddle">
 				<view v-show="!editStates.userWx">{{editDataObj.userWx}}</view>
-				<input v-show="editStates.userWx" ref="userWx" :value="editDataObj.userWx" type="text"
+				<input v-show="editStates.userWx" ref="userWx"  type="text"
 					v-model="editDataObj.userWx" style="text-align: center;" placeholder="请输入文字" @blur="handleBlur('userWx')" />
 			</view>
 			<view class="contentItemRight" v-show="!editStates.userWx">

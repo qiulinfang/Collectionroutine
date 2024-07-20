@@ -1,26 +1,24 @@
 <template>
-	<view class="container">
-		<view class="community">
-			<view class="community-header">
-				<img class="community-header-img" src="/static/logo/logo.png" alt="" />
-				<uni-easyinput prefixIcon="search" v-model="value" placeholder="左侧图标" @iconClick="handleSearchClick"
-					@focus="handleSearchClick">
-				</uni-easyinput>
-				<topNavBar :categories="categories" @indexChange='changPage'></topNavBar>
-			</view>
-			<view class="content">
-				<block v-for="(item, index) in filteredArticles" :key="index">
-					<articleItroduction :pageData='item'></articleItroduction>
-				</block>
-			</view>
+	<view class="community">
+		<view class="community-header">
+				<img class="community-header-img" mode="aspectFit" src="/static/logo/logo.png" alt="" />
+			<uni-easyinput prefixIcon="search" v-model="value" placeholder="左侧图标" @iconClick="handleSearchClick"
+				@focus="handleSearchClick">
+			</uni-easyinput>
+			<topNavBar :categories="categories" @indexChange='changPage'></topNavBar>
 		</view>
-	</view>
-	<view class="xuanfu">
-		<view class="xuanfu-item" @click="scrollToTop">
-			<uni-icons type="arrow-up" size="30"></uni-icons>
+		<view class="content">
+			<block v-for="(item, index) in filteredArticles" :key="index">
+				<articleItroduction :pageData='item'></articleItroduction>
+			</block>
 		</view>
-		<view class="xuanfu-item" @click="goToPublishPage">
-			<uni-icons type="paperplane" size="30"></uni-icons>
+		<view class="xuanfu">
+			<view class="xuanfu-item" @click="scrollToTop">
+				<uni-icons type="arrow-up" size="30"></uni-icons>
+			</view>
+			<view class="xuanfu-item" @click="goToPublishPage">
+				<uni-icons type="paperplane" size="30"></uni-icons>
+			</view>
 		</view>
 	</view>
 </template>
@@ -48,7 +46,7 @@
 		},
 		computed: {
 			filteredArticles() {
-				return this.pageList.filter(item => item.family.familyId ===this.currentTab);
+				return this.pageList.filter(item => item.family.familyId === this.currentTab);
 			},
 		},
 		onLoad: function(options) {
@@ -132,29 +130,27 @@
 	}
 </script>
 
-<style scoped lang="scss" >
-	.container {
+<style scoped lang="scss">
+	.community {
 		background-color: azure;
 		height: 100%;
-	}
-
-	.community {
-		margin: 0rpx 30rpx;
 		position: relative;
+		padding: 0rpx 30rpx;
 		height: 100%;
 	}
 
 	.community-header {
 		position: sticky;
-		top: 80rpx;
+		top: 0rpx;
 		z-index: 1000;
 		background-color: azure;
 	}
+		
 
 	.community-header-img {
 		width: 300rpx;
+		height: 100rpx;
 	}
-
 
 	.xuanfu {
 		position: fixed;

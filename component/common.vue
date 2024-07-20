@@ -71,7 +71,7 @@
 	export default {
 		data() {
 			return ({
-				zilunpingqu: new Array(length).fill(0),
+				zilunpingqu: new Array(100).fill(0),
 				neirong: [{}],
 				pinglun: [{
 						touxiangurl: '/static/images/loginAvatar.png',

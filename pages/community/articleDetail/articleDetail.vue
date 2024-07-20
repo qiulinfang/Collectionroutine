@@ -37,8 +37,10 @@
 				{{pageList.article.commentNum}}
 			</view>
 			<view class="">
-				<uni-icons type="paperplane" :size="20" color="#777" />
-				{{pageList.article.shareNum}}
+
+				<button plain="true" class="text-only-button" open-type="share"> 
+				<uni-icons type="paperplane" :size="20" color="#777" open-type="share" />
+					{{pageList.article.shareNum}}</button>
 			</view>
 		</view>
 	</view>
@@ -74,6 +76,16 @@
 		},
 		onLoad: function() {
 			this.fetchData();
+
+		},
+		onShareAppMessage(res) {
+			if (res.from === 'button') { // 来自页面内分享按钮
+				console.log(res.target)
+			}
+			return {
+				title: '自定义分享标题',
+				path: '/pages/test/test?id=123'
+			}
 		},
 		methods: {
 			async fetchData() {
@@ -170,5 +182,32 @@
 		justify-content: space-between;
 		width: 100%;
 		background-color: white;
+	}
+	
+	.text-only-button {
+	  /* 去除默认的边框 */
+	  border: none;
+	  
+	  /* 去除默认的背景 */
+	  background: none;
+	  
+	  /* 设置文本颜色，可以根据需要更改 */
+	  color: #333;
+	  
+	  /* 去除默认的内边距 */
+	  padding: 0;
+	  
+	  /* 去除默认的外边距 */
+	  margin: 0;
+	  
+	  /* 重置默认的字体大小和行高 */
+	  font-size: inherit;
+	  line-height: inherit;
+	  
+	  /* 可选：去除鼠标悬停时的下划线 */
+	  text-decoration: none;
+	  
+	  /* 可选：设置光标为指针，以指示可点击 */
+	  cursor: pointer;
 	}
 </style>

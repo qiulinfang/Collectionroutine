@@ -306,18 +306,252 @@
 	"userpersonalInformation": {
 		"name": "typicode"
 	},
-	"usernum": {
-		"name": "typicode"
-	},
+	"usernum": [{
+			"fansNum": 123,
+			"articleNum": 15,
+			"answerUserNum": 50
+		},
+		{
+			"fansNum": 245,
+			"articleNum": 22,
+			"answerUserNum": 30
+		},
+		{
+			"fansNum": 350,
+			"articleNum": 10,
+			"answerUserNum": 70
+		},
+		{
+			"fansNum": 430,
+			"articleNum": 8,
+			"answerUserNum": 60
+		},
+		{
+			"fansNum": 510,
+			"articleNum": 20,
+			"answerUserNum": 45
+		},
+		{
+			"fansNum": 600,
+			"articleNum": 12,
+			"answerUserNum": 55
+		},
+		{
+			"fansNum": 720,
+			"articleNum": 25,
+			"answerUserNum": 80
+		},
+		{
+			"fansNum": 850,
+			"articleNum": 18,
+			"answerUserNum": 90
+		},
+		{
+			"fansNum": 970,
+			"articleNum": 30,
+			"answerUserNum": 100
+		},
+		{
+			"fansNum": 1050,
+			"articleNum": 28,
+			"answerUserNum": 120
+		}
+	],
 	"usermodifyGoods": {
 		"name": "typicode"
 	},
-	"userpersonalInformation": {
-		"name": "typicode"
-	},
-	"useruserInfo": {
-		"name": "typicode"
-	},
+	"userpersonalInformation": [{
+			"phoneNumber": "13800138000",
+			"signature": "热爱生活，享受每一分每一秒。",
+			"sex": "2",
+			"userName": "晨风",
+			"userId": "1610801362600222723",
+			"wxNum": "chenfeng123",
+			"queryId": 100051
+		},
+		{
+			"phoneNumber": "13900139000",
+			"signature": "梦想家，不断追求卓越。",
+			"sex": "1",
+			"userName": "星河",
+			"userId": "1610801362600222724",
+			"wxNum": "xinghe99",
+			"queryId": 100052
+		},
+		{
+			"phoneNumber": "13700137000",
+			"signature": "旅行爱好者，探索世界的美好。",
+			"sex": "2",
+			"userName": "远方",
+			"userId": "1610801362600222725",
+			"wxNum": "yuanyang1987",
+			"queryId": 100053
+		},
+		{
+			"phoneNumber": "13600136000",
+			"signature": "程序员，喜欢挑战难题。",
+			"sex": "2",
+			"userName": "代码侠",
+			"userId": "1610801362600222726",
+			"wxNum": "coderXia",
+			"queryId": 100054
+		},
+		{
+			"phoneNumber": "13500135000",
+			"signature": "美食家，品味生活的艺术。",
+			"sex": "1",
+			"userName": "味蕾",
+			"userId": "1610801362600222727",
+			"wxNum": "weilaiTaste",
+			"queryId": 100055
+		},
+		{
+			"phoneNumber": "13400134000",
+			"signature": "音乐发烧友，沉浸在旋律的世界。",
+			"sex": "0",
+			"userName": "音符",
+			"userId": "1610801362600222728",
+			"wxNum": "musicNote",
+			"queryId": 100056
+		},
+		{
+			"phoneNumber": "13300133000",
+			"signature": "摄影爱好者，捕捉瞬间的永恒。",
+			"sex": "2",
+			"userName": "光影",
+			"userId": "1610801362600222729",
+			"wxNum": "lightShadow",
+			"queryId": 100057
+		},
+		{
+			"phoneNumber": "13200132000",
+			"signature": "书虫，沉浸在知识的海洋。",
+			"sex": "1",
+			"userName": "墨香",
+			"userId": "1610801362600222730",
+			"wxNum": "moxiangRead",
+			"queryId": 100058
+		},
+		{
+			"phoneNumber": "13100131000",
+			"signature": "健身达人，追求健康的生活方式。",
+			"sex": "2",
+			"userName": "铁人",
+			"userId": "1610801362600222731",
+			"wxNum": "ironMan",
+			"queryId": 100059
+		},
+		{
+			"phoneNumber": "13000130000",
+			"signature": "梦想家，相信一切皆有可能。",
+			"sex": "0",
+			"userName": "梦寻",
+			"userId": "1610801362600222732",
+			"wxNum": "dreamSeeker",
+			"queryId": 100060
+		}
+	],
+	"useruserInfo": [{
+			"school": "河北软件技术学院",
+			"class_id": "2",
+			"str_attest_id": "1615273374546718722",
+			"str_name": "张航",
+			"str_number": 206307268,
+			"avatar": "https://qj-school.oss-cn-beijing.aliyuncs.com/2023-01-06/308fc78b738e490299eff8441d042086avatar.png",
+			"department": "软件工程系",
+			"parentId": "1"
+		},
+		{
+			"school": "河北软件技术学院",
+			"class_id": "2",
+			"str_attest_id": "1615273374546718723",
+			"str_name": "李明",
+			"str_number": 206307269,
+			"avatar": "https://example.com/avatar2.png",
+			"department": "软件工程系",
+			"parentId": "1"
+		},
+		{
+			"school": "河北软件技术学院",
+			"class_id": "2",
+			"str_attest_id": "1615273374546718724",
+			"str_name": "王丽",
+			"str_number": 206307270,
+			"avatar": "https://example.com/avatar3.png",
+			"department": "软件工程系",
+			"parentId": "1"
+		},
+		{
+			"school": "河北软件技术学院",
+			"class_id": "2",
+			"str_attest_id": "1615273374546718725",
+			"str_name": "赵强",
+			"str_number": 206307271,
+			"avatar": "https://example.com/avatar4.png",
+			"department": "软件工程系",
+			"parentId": "1"
+		},
+		{
+			"school": "河北软件技术学院",
+			"class_id": "2",
+			"str_attest_id": "1615273374546718726",
+			"str_name": "孙悦",
+			"str_number": 206307272,
+			"avatar": "https://example.com/avatar5.png",
+			"department": "软件工程系",
+			"parentId": "1"
+		},
+		{
+			"school": "河北软件技术学院",
+			"class_id": "2",
+			"str_attest_id": "1615273374546718727",
+			"str_name": "周杰",
+			"str_number": 206307273,
+			"avatar": "https://example.com/avatar6.png",
+			"department": "软件工程系",
+			"parentId": "1"
+		},
+		{
+			"school": "河北软件技术学院",
+			"class_id": "2",
+			"str_attest_id": "1615273374546718728",
+			"str_name": "吴芳",
+			"str_number": 206307274,
+			"avatar": "https://example.com/avatar7.png",
+			"department": "软件工程系",
+			"parentId": "1"
+		},
+		{
+			"school": "河北软件技术学院",
+			"class_id": "2",
+			"str_attest_id": "1615273374546718729",
+			"str_name": "郑浩",
+			"str_number": 206307275,
+			"avatar": "https://example.com/avatar8.png",
+			"department": "软件工程系",
+			"parentId": "1"
+		},
+		{
+			"school": "河北软件技术学院",
+			"class_id": "2",
+			"str_attest_id": "1615273374546718730",
+			"str_name": "王小燕",
+			"str_number": 206307276,
+			"avatar": "https://example.com/avatar9.png",
+			"department": "软件工程系",
+			"parentId": "1"
+		},
+		{
+			"school": "河北软件技术学院",
+			"class_id": "2",
+			"str_attest_id": "1615273374546718731",
+			"str_name": "刘洋",
+			"str_number": 206307277,
+			"avatar": "https://example.com/avatar10.png",
+			"department": "软件工程系",
+			"parentId": "1"
+		}
+	],
 	"ideafeedback/feedback": {
 		"name": "typicode"
 	},
@@ -327,12 +561,168 @@
 	"fansquery": {
 		"name": "typicode"
 	},
-	"accountuserInfo": {
-		"name": "typicode"
-	},
-	"accountauth": {
-		"name": "typicode"
-	},
+	"accountuserInfo": {},
+	"accountauth": [{
+			"userId": "1610561647732920322",
+			"id": 100049,
+			"userName": "未设置用户名",
+			"classId": null,
+			"phoneNumber": "",
+			"fansNum": 0,
+			"sex": "0",
+			"isDeleted": "0",
+			"avatar": null,
+			"signature": "这个用户摆烂，还没有个性签名",
+			"createTime": "1672822794264",
+			"updateTime": "1672822794264",
+			"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzZXgiOiIwIiwibmFtZSI6Iuacquiuvue9rueUqOaIt-WQjSIsImlkIjoiMTYxMDU2MTY0NzczMjkyMDMyMiIsInRpbWUiOiIxNjcyODIzOTgxNDAwIiwiZXhwIjoxNjczNDI4NzgxfQ.YWOvps1fe9BYTiIg0WCJGJ5KQfUo4UhOlHKPL7Q7UDD_dMVhLaegIp1bTNe-JXC98zOghRNdybEM53Xy7oSZrw",
+			"badge": null
+		},
+		{
+			"userId": "1610561647732920323",
+			"id": 100050,
+			"userName": "未设置用户名",
+			"classId": null,
+			"phoneNumber": "",
+			"fansNum": 0,
+			"sex": "0",
+			"isDeleted": "0",
+			"avatar": null,
+			"signature": "这个用户摆烂，还没有个性签名",
+			"createTime": "1672822794264",
+			"updateTime": "1672822794264",
+			"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzZXgiOiIwIiwibmFtZSI6Iuacquiuvue9rueUqOaIt-WQjSIsImlkIjoiMTYxMDU2MTY0NzczMjkyMDMyMyIsInRpbWUiOiIxNjcyODIzOTgxNDAwIiwiZXhwIjoxNjczNDI4NzgxfQ.YWOvps1fe9BYTiIg0WCJGJ5KQfUo4UhOlHKPL7Q7UDD_dMVhLaegIp1bTNe-JXC98zOghRNdybEM53Xy7oSZrw",
+			"badge": null
+		},
+		{
+			"userId": "1610561647732920324",
+			"id": 100051,
+			"userName": "未设置用户名",
+			"classId": null,
+			"phoneNumber": "",
+			"fansNum": 0,
+			"sex": "0",
+			"isDeleted": "0",
+			"avatar": null,
+			"signature": "这个用户摆烂，还没有个性签名",
+			"createTime": "1672822794264",
+			"updateTime": "1672822794264",
+			"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzZXgiOiIwIiwibmFtZSI6Iuacquiuvue9rueUqOaIt-WQjSIsImlkIjoiMTYxMDU2MTY0NzczMjkyMDMyNCIsInRpbWUiOiIxNjcyODIzOTgxNDAwIiwiZXhwIjoxNjczNDI4NzgxfQ.YWOvps1fe9BYTiIg0WCJGJ5KQfUo4UhOlHKPL7Q7UDD_dMVhLaegIp1bTNe-JXC98zOghRNdybEM53Xy7oSZrw",
+			"badge": null
+		},
+		{
+			"userId": "1610561647732920325",
+			"id": 100052,
+			"userName": "未设置用户名",
+			"classId": null,
+			"phoneNumber": "",
+			"fansNum": 0,
+			"sex": "0",
+			"isDeleted": "0",
+			"avatar": null,
+			"signature": "这个用户摆烂，还没有个性签名",
+			"createTime": "1672822794264",
+			"updateTime": "1672822794264",
+			"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzZXgiOiIwIiwibmFtZSI6Iuacquiuvue9rueUqOaIt-WQjSIsImlkIjoiMTYxMDU2MTY0NzczMjkyMDMyNSIsInRpbWUiOiIxNjcyODIzOTgxNDAwIiwiZXhwIjoxNjczNDI4NzgxfQ.YWOvps1fe9BYTiIg0WCJGJ5KQfUo4UhOlHKPL7Q7UDD_dMVhLaegIp1bTNe-JXC98zOghRNdybEM53Xy7oSZrw",
+			"badge": null
+		},
+		{
+			"userId": "1610561647732920326",
+			"id": 100053,
+			"userName": "未设置用户名",
+			"classId": null,
+			"phoneNumber": "",
+			"fansNum": 0,
+			"sex": "0",
+			"isDeleted": "0",
+			"avatar": null,
+			"signature": "这个用户摆烂，还没有个性签名",
+			"createTime": "1672822794264",
+			"updateTime": "1672822794264",
+			"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzZXgiOiIwIiwibmFtZSI6Iuacquiuvue9rueUqOaIt-WQjSIsImlkIjoiMTYxMDU2MTY0NzczMjkyMDMyNiIsInRpbWUiOiIxNjcyODIzOTgxNDAwIiwiZXhwIjoxNjczNDI4NzgxfQ.YWOvps1fe9BYTiIg0WCJGJ5KQfUo4UhOlHKPL7Q7UDD_dMVhLaegIp1bTNe-JXC98zOghRNdybEM53Xy7oSZrw",
+			"badge": null
+		},
+		{
+			"userId": "1610561647732920327",
+			"id": 100054,
+			"userName": "未设置用户名",
+			"classId": null,
+			"phoneNumber": "",
+			"fansNum": 0,
+			"sex": "0",
+			"isDeleted": "0",
+			"avatar": null,
+			"signature": "这个用户摆烂，还没有个性签名",
+			"createTime": "1672822794264",
+			"updateTime": "1672822794264",
+			"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzZXgiOiIwIiwibmFtZSI6Iuacquiuvue9rueUqOaIt-WQjSIsImlkIjoiMTYxMDU2MTY0NzczMjkyMDMyNyIsInRpbWUiOiIxNjcyODIzOTgxNDAwIiwiZXhwIjoxNjczNDI4NzgxfQ.YWOvps1fe9BYTiIg0WCJGJ5KQfUo4UhOlHKPL7Q7UDD_dMVhLaegIp1bTNe-JXC98zOghRNdybEM53Xy7oSZrw",
+			"badge": null
+		},
+		{
+			"userId": "1610561647732920328",
+			"id": 100055,
+			"userName": "未设置用户名",
+			"classId": null,
+			"phoneNumber": "",
+			"fansNum": 0,
+			"sex": "0",
+			"isDeleted": "0",
+			"avatar": null,
+			"signature": "这个用户摆烂，还没有个性签名",
+			"createTime": "1672822794264",
+			"updateTime": "1672822794264",
+			"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzZXgiOiIwIiwibmFtZSI6Iuacquiuvue9rueUqOaIt-WQjSIsImlkIjoiMTYxMDU2MTY0NzczMjkyMDMyOCIsInRpbWUiOiIxNjcyODIzOTgxNDAwIiwiZXhwIjoxNjczNDI4NzgxfQ.YWOvps1fe9BYTiIg0WCJGJ5KQfUo4UhOlHKPL7Q7UDD_dMVhLaegIp1bTNe-JXC98zOghRNdybEM53Xy7oSZrw",
+			"badge": null
+		},
+		{
+			"userId": "1610561647732920329",
+			"id": 100056,
+			"userName": "未设置用户名",
+			"classId": null,
+			"phoneNumber": "",
+			"fansNum": 0,
+			"sex": "0",
+			"isDeleted": "0",
+			"avatar": null,
+			"signature": "这个用户摆烂，还没有个性签名",
+			"createTime": "1672822794264",
+			"updateTime": "1672822794264",
+			"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzZXgiOiIwIiwibmFtZSI6Iuacquiuvue9rueUqOaIt-WQjSIsImlkIjoiMTYxMDU2MTY0NzczMjkyMDMyOSIsInRpbWUiOiIxNjcyODIzOTgxNDAwIiwiZXhwIjoxNjczNDI4NzgxfQ.YWOvps1fe9BYTiIg0WCJGJ5KQfUo4UhOlHKPL7Q7UDD_dMVhLaegIp1bTNe-JXC98zOghRNdybEM53Xy7oSZrw",
+			"badge": null
+		},
+		{
+			"userId": "1610561647732920330",
+			"id": 100057,
+			"userName": "未设置用户名",
+			"classId": null,
+			"phoneNumber": "",
+			"fansNum": 0,
+			"sex": "0",
+			"isDeleted": "0",
+			"avatar": null,
+			"signature": "这个用户摆烂，还没有个性签名",
+			"createTime": "1672822794264",
+			"updateTime": "1672822794264",
+			"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzZXgiOiIwIiwibmFtZSI6Iuacquiuvue9rueUqOaIt-WQjSIsImlkIjoiMTYxMDU2MTY0NzczMjkyMDMyMCIsInRpbWUiOiIxNjcyODIzOTgxNDAwIiwiZXhwIjoxNjczNDI4NzgxfQ.YWOvps1fe9BYTiIg0WCJGJ5KQfUo4UhOlHKPL7Q7UDD_dMVhLaegIp1bTNe-JXC98zOghRNdybEM53Xy7oSZrw",
+			"badge": null
+		},
+		{
+			"userId": "1610561647732920331",
+			"id": 100058,
+			"userName": "未设置用户名",
+			"classId": null,
+			"phoneNumber": "",
+			"fansNum": 0,
+			"sex": "0",
+			"isDeleted": "0",
+			"avatar": null,
+			"signature": "这个用户摆烂，还没有个性签名",
+			"createTime": "1672822794264",
+			"updateTime": "1672822794264",
+			"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzZXgiOiIwIiwibmFtZSI6Iuacquiuvue9rueUqOaIt-WQjSIsImlkIjoiMTYxMDU2MTY0NzczMjkyMDMyMSIsInRpbWUiOiIxNjcyODIzOTgxNDAwIiwiZXhwIjoxNjczNDI4NzgxfQ.YWOvps1fe9BYTiIg0WCJGJ5KQfUo4UhOlHKPL7Q7UDD_dMVhLaegIp1bTNe-JXC98zOghRNdybEM53Xy7oSZrw",
+			"badge": null
+		}
+	],
 	"accountreset-password": {
 		"name": "typicode"
 	},
@@ -615,7 +1005,7 @@
 				"createTime": "1673945722353",
 				"commentNum": 5,
 				"viewsNum": 79,
-				"shareNum": 0,
+				"shareNum": 22,
 				"likeNum": 1
 			},
 			"user": {

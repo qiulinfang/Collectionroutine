@@ -1,5 +1,11 @@
 {
 	"pages": [{
+			"path": "pages/community/community",
+			"style": {
+				"navigationBarTitleText": ""
+				// "navigationStyle":"custom"  //自定义头部去掉默认头部导航
+			}
+		}, {
 			"path": "pages/my/my",
 			"style": {
 				"navigationBarTitleText": ""
@@ -21,53 +27,47 @@
 			}
 		},
 		{
-			"path" : "pages/my/material/material",
-			"style" : 
-			{
-				"navigationBarTitleText" : ""
+			"path": "pages/my/material/material",
+			"style": {
+				"navigationBarTitleText": ""
+				// "navigationStyle":"custom"  //自定义头部去掉默认头部导航
+			}
+		},
+
+		{
+			"path": "pages/community/searchPage/searchPage",
+			"style": {
+				"navigationBarTitleText": ""
 				// "navigationStyle":"custom"  //自定义头部去掉默认头部导航
 			}
 		},
 		{
-			"path" : "pages/community/community",
-			"style" : 
-			{
-				"navigationBarTitleText" : ""
+			"path": "pages/community/articleDetail/articleDetail",
+			"style": {
+				"navigationBarTitleText": ""
 				// "navigationStyle":"custom"  //自定义头部去掉默认头部导航
 			}
 		},
 		{
-			"path" : "pages/community/searchPage/searchPage",
-			"style" : 
-			{
-				"navigationBarTitleText" : ""
-				// "navigationStyle":"custom"  //自定义头部去掉默认头部导航
+			"path": "component/test/test",
+			"style": {
+				"navigationBarTitleText": ""
 			}
 		},
 		{
-			"path" : "pages/community/articleDetail/articleDetail",
-			"style" : 
-			{
-				"navigationBarTitleText" : ""
-				// "navigationStyle":"custom"  //自定义头部去掉默认头部导航
+			"path": "pages/community/publishPage/publishPage",
+			"style": {
+				"navigationBarTitleText": ""
 			}
 		},
 		{
-			"path" : "component/test/test",
-			"style" : 
-			{
-				"navigationBarTitleText" : ""
+			"path": "pages/userPage/userPage",
+			"style": {
+				"navigationBarTitleText": ""
 			}
 		},
 		{
-			"path" : "pages/community/publishPage/publishPage",
-			"style" : 
-			{
-				"navigationBarTitleText" : ""
-			}
-		},
-		{
-			"path" : "pages/userPage/userPage",
+			"path" : "pages/login/login",
 			"style" : 
 			{
 				"navigationBarTitleText" : ""
