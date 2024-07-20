@@ -132,7 +132,7 @@
 	}
 </script>
 
-<style scoped lang="scss">
+<style scoped lang="scss" >
 	.container {
 		background-color: azure;
 		height: 100%;

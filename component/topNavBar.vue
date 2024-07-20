@@ -7,7 +7,7 @@
 	</scroll-view>
 </template>
 
-<script>
+<script scoped>
 	export default {
 		name: 'TopNavBar',
 		props: {

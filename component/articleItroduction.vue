@@ -30,9 +30,11 @@
 			</uni-grid>
 		</view>
 		<view class="content-fotter">
-			<view class="">
-				<uni-icons type="hand-up" :size="20" color="#777" />
-				{{pageData.article.likeNum}}
+			<view class="" @click="likePost" >
+				<!-- 使用v-if和v-else来切换图标 -->
+				<uni-icons  type="hand-up" v-if="!isLiked" :size="20" color="#777" />
+				<uni-icons type="hand-up-filled" v-else :size="20" color="#777" />
+				<text>{{ likeCount }}</text>
 			</view>
 			<view class="">
 				<uni-icons type="chat" :size="20" color="#777" />
@@ -52,12 +54,17 @@
 			pageData: {
 				type: Object,
 				required: true,
+
 			},
 		},
-		data() {},
+		data() {
+			return ({
+				isLiked: false, // 是否已经点赞
+				likeCount: 0 // 点赞数量
+			})
+		},
 		methods: {
 			goToArticleDetail() {
-				
 				try {
 					uni.navigateTo({
 						url: "/pages/community/articleDetail/articleDetail",
@@ -72,12 +79,36 @@
 				} catch (error) {
 					console.log(error)
 				}
+			},
+			likePost() {
+				if (!this.isLiked) {
+					// 如果未点赞，则增加点赞数并更新状态
+					this.likeCount++;
+					this.isLiked = true;
+					// // 执行点赞操作，例如调用后端API
+					// this.$http.post('/like/post', {
+					// 	postId: this.postId
+					// }).then(response => {
+					// 	// 处理后端响应
+					// });
+				} else {
+					// 如果已点赞，则减少点赞数并更新状态
+					this.likeCount--;
+					this.isLiked = false;
+					// 执行取消点赞操作，例如调用后端API
+					// this.$http.delete('/like/post', {
+					// 	postId: this.postId
+					// }).then(response => {
+					// 	// 处理后端响应
+					// });
+				}
 			}
-		}
+		},
+
 	}
 </script>
 
-<style>
+<style scoped>
 	.pageIntroductionContainer {
 		box-shadow: 3px 3px 2px 0 rgba(0, 0, 0, 0.1);
 		background-color: white;
