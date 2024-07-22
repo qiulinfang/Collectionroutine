@@ -20,10 +20,10 @@
 			}
 		},
 		{
-			"path": "pages/xiaoxi/xiaoxi",
-			"style": {
-				"navigationBarTitleText": ""
-				// "navigationStyle":"custom"  //自定义头部去掉默认头部导航
+			"path" : "pages/message/message",
+			"style" : 
+			{
+				"navigationBarTitleText" : ""
 			}
 		},
 		{
@@ -72,6 +72,22 @@
 			{
 				"navigationBarTitleText" : ""
 			}
+		},
+
+		{
+			"path" : "pages/message/messageDetail/messageDetail",
+			"style" : 
+			{
+				"navigationBarTitleText" : ""
+				// "navigationStyle":"custom"  //自定义头部去掉默认头部导航
+			}
+		},
+		{
+			"path" : "pages/message/sixing/sixing",
+			"style" : 
+			{
+				"navigationBarTitleText" : ""
+			}
 		}
 	],
 	"globalStyle": {
@@ -97,8 +113,8 @@
 				"selectedIconPath": "static/tab-icons/used-active.png"
 			},
 			{
-				"pagePath": "pages/xiaoxi/xiaoxi",
-				"text": "xiaoxi",
+				"pagePath": "pages/message/message",
+				"text": "message",
 				"iconPath": "static/tab-icons/news.png",
 				"selectedIconPath": "static/tab-icons/news-active.png"
 			},

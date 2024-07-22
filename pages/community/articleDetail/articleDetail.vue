@@ -53,7 +53,7 @@
 		</view>
 	</view>
 	<view class="meiyoushuju" v-if="meiyoushuju">
-		没有更多数据
+		没有更多数据没有更多数据没有更多数据没有更多数据没有更多数据没有更多数据没有更多数据没有更多数据没有更多数据没有更多数据没有更多数据没有更多数据没有更多数据
 	</view>
 	<view class="fabiaopinglun">
 		<input type="text" placeholder="请输入你的评论" />

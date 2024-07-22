@@ -3,33 +3,55 @@
 		<view class="header">
 			<view class="user-info">
 				<view class="user-info-left-box">
-					<image :src="userAvatar" fit="aspectFill" class="user-info-avatar"></image>
-					<view class="login-container" v-if="!userObj.id">
-						<text class="login-btn">未登录</text>
+					<view class="yonghutouxiang" @click="goToLogin">
+						<image v-if="isLoggedIn" :src="userAvatar" fit="aspectFill" class="user-info-avatar"></image>
+						<image v-else src="/static/images/defaultAvatar.jpg" fit="aspectFill" class="user-info-avatar"></image>
 					</view>
-					<view class="id-num-box" v-else>
-						<view class="user-name">齐家网</view>
-						<view class="user-ids">ID：100019</view>
+					<view class="nichengheid">
+						<view  v-if="isLoggedIn" class="id-num-box">
+							<view class="user-name">齐家网</view>
+							<view class="user-ids">ID：100019</view>
+						</view>
+						<view v-else class="login-container"  @click="goToLogin">
+							<text class="login-btn">未登录</text>
+						</view>
 					</view>
 				</view>
-				<view class="user-info-right-box" @click="handleJumpPage('/pages/my/material/material')" >
+				<view v-if="isLoggedIn" class="user-info-right-box" @click="handleJumpPage('/pages/my/material/material')">
 					<text class="text">个人资料</text>
 					<uni-icons class="right-icon" type="right"></uni-icons>
 				</view>
 			</view>
-			<view class="user-data">
-				<view>
-					<view class="user-data-count">0</view>
-					<view>我的文章</view>
+			<view>
+				<view v-if="isLoggedIn" class="user-data">
+					<view>
+						<view class="user-data-count">{{userInfo.fansNum}}</view>
+						<view @click="console.log(userInfo)">我的文章</view>
+					</view>
+					<view>
+						<view class="user-data-count">{{userInfo.articleNum}}</view>
+						<view>我的文章</view>
+					</view>
+					<view>
+						<view class="user-data-count">{{userInfo.answerUserNum}}</view>
+						<view>我的文章</view>
+					</view>
 				</view>
-				<view>
-					<view class="user-data-count">0</view>
-					<view>我的文章</view>
+				<view v-else class="user-data">
+					<view>
+						<view class="user-data-count">0</view>
+						<view>我的文章</view>
+					</view>
+					<view>
+						<view class="user-data-count">0</view>
+						<view>我的文章</view>
+					</view>
+					<view>
+						<view class="user-data-count">0</view>
+						<view>我的文章</view>
+					</view>
 				</view>
-				<view>
-					<view class="user-data-count">0</view>
-					<view>我的文章</view>
-				</view>
+
 			</view>
 		</view>
 		<view class="ellipse"></view>
@@ -47,8 +69,8 @@
 		</view>
 	</view>
 	<!-- 退出登录 -->
-	<view class="exit-container" v-if="userObj.id">
-		<view class="exit-btn" @click="handlerExitLogin">
+	<view class="exit-container" v-if="isLoggedIn">
+		<view class="exit-btn" @click="logout">
 			退出登录
 		</view>
 	</view>
@@ -69,9 +91,6 @@
 		</view>
 	</uni-popup>
 
-
-
-
 </template>
 
 <script>
@@ -81,7 +100,9 @@
 				userAvatar: "/static/images/loginAvatar.png",
 				userObj: {
 					id: 'sljdf',
-				}, // 用户对象
+				},
+				isLoggedIn: false,
+				userInfo: {},
 				headerNavList: [{ // 头部导航列表
 						text: "我的文章",
 						url: "/pages/my/issue/issue",
@@ -121,6 +142,9 @@
 				],
 			}
 		},
+		onLoad: function() {
+			this.checkLoginStatus();
+		},
 		methods: {
 			open() {
 				this.$refs.popup.open('center')
@@ -139,6 +163,46 @@
 						// 跳转失败后的回调函数
 						console.log('跳转失败', err);
 					}
+				});
+			},
+			async checkLoginStatus() {
+				try {
+					const token = uni.getStorageSync('token');
+					if (token) {
+						this.isLoggedIn = true;
+						// 如果有需要，可以在这里调用API获取用户详细信息
+						const response = await uni.request({
+							url: 'http://localhost:3000/usernum', // 你的API地址
+							// header: {
+							// 	'c': 'Bearer ' + uni.getStorageSync('token')
+							// },
+							success: (res) => {
+								if (res.statusCode === 200) {
+									console.log("请求成功",res.data[0]);
+									this.userInfo = res.data[0];
+								}
+							},
+							fail: (err) => {
+								console.error('请求失败', err);
+							}
+						});
+					}
+				} catch (error) {
+					console.error('Error checking login status:', error);
+				}
+			},
+			goToLogin() {
+				uni.navigateTo({
+					url: '/pages/login/login'
+				});
+			},
+			logout() {
+				uni.removeStorageSync('token');
+				this.isLoggedIn = false;
+				this.userInfo = null;
+				uni.showToast({
+					title: '已退出登录',
+					icon: 'none'
 				});
 			}
 		}

@@ -563,6 +563,7 @@
 	},
 	"accountuserInfo": {},
 	"accountauth": [{
+
 			"userId": "1610561647732920322",
 			"id": 100049,
 			"userName": "未设置用户名",
@@ -1501,18 +1502,245 @@
 	"commentcommentId": {
 		"name": "typicode"
 	},
-	"chatMsg": {
-		"name": "typicode"
-	},
-	"chatMsglist": {
-		"name": "typicode"
-	},
+	"chatMsg": [{
+			"unreadNum": 44, 
+			"msg": "暂无新消息", 
+			"type": "0" 
+		},
+		{
+			"unreadNum": 0, 
+			"msg": "暂无新消息", 
+			"type": "1" 
+		},
+		{
+			"unreadNum": 111, 
+			"msg": "暂无新消息", 
+			"type": "2" 
+		},
+		{
+			"unreadNum": 2, 
+			"msg": "您有新的私信", 
+			"type": "3" 
+		}
+	],
+	"chatMsglist": [{
+			"msg": "{\"articleId\":\"1611280850551349250\",\"updateTime\":\"1675071740177\",\"likeState\":\"0\",\"userId\":\"1570565996438142977\",\"createTime\":\"1675071740177\",\"articleLikeId\":\"1619994410567622658\"}", 
+			"image": "", 
+			"signFlag": "1", 
+			"acceptUserId": "1610801362600222722", 
+			"sendUser": {
+				"userName": "True", 
+				"userId": "1570565996438142977" 
+			}, 
+			"updateTime": "1675071740189", 
+			"type": "1", 
+			"content": "222222222222", 
+			"tips": "赞了您的文章：", 
+			"sendUserId": "1570565996438142977", 
+			"createTime": "1675071740189", 
+			"id": "1619994410613760001", 
+			"operObj": {
+				"commonId": "1611280850572320770", 
+				"type": "0" 
+			} 
+		},
+		{
+			"msg": "{\"articleId\":\"1615271549504385026\",\"updateTime\":\"1675071734659\",\"likeState\":\"0\",\"userId\":\"1570565996438142977\",\"createTime\":\"1675071734659\",\"articleLikeId\":\"1619994387423453186\"}", 
+			"image": "", 
+			"signFlag": "1", 
+			"acceptUserId": "1610801362600222722", 
+			"sendUser": {
+				"userName": "True", 
+				"userId": "1570565996438142977" 
+			}, 
+			"updateTime": "1675071734712", 
+			"type": "1", 
+			"content": "好消息！好消息", 
+			"tips": "赞了您的文章：", 
+			"sendUserId": "1570565996438142977", 
+			"createTime": "1675071734712", 
+			"id": "1619994387645751298", 
+			"operObj": {
+				"commonId": "1615271549546328065", 
+				"type": "0" 
+			} 
+		},
+		{
+			"msg": "{\"articleId\":\"1613111117998026754\",\"updateTime\":\"1675068278733\",\"likeState\":\"0\",\"userId\":\"1570565996438142977\",\"createTime\":\"1675068278733\",\"articleLikeId\":\"1619979892219228162\"}", 
+			"image": "", 
+			"signFlag": "1", 
+			"acceptUserId": "1610801362600222722", 
+			"sendUser": {
+				"userName": "True", 
+				"userId": "1570565996438142977" 
+			}, 
+			"updateTime": "1675068278741", 
+			"type": "1", 
+			"content": "231", 
+			"tips": "赞了您的文章：", 
+			"sendUserId": "1570565996438142977", 
+			"createTime": "1675068278741", 
+			"id": "1619979892252782593", 
+			"operObj": {
+				"commonId": "1613111118048358401", 
+				"type": "0" 
+			} 
+		}
+	],
 	"chatMsgsend": {
 		"name": "typicode"
 	},
-	"chatMsg:acceptUserId": {
-		"name": "typicode"
-	},
+	"chatMsgacceptUserId": [{
+			"msg": "hello", 
+			"sendUserId": "1610801362600222722", 
+			"signFlag": "1", 
+			"acceptUserId": "1570565996438142977", 
+			"createTime": "1676018365637", 
+			"sendUser": {
+				"avatar": "https://qj-school.oss-cn-beijing.aliyuncs.com/2023-01-06/308fc78b738e490299eff8441d042086avatar.png", 
+				"userName": "chunshan", 
+				"userId": "1610801362600222722" 
+			}, 
+			"updateTime": "1676018365637", 
+			"id": "1623964845516603394", 
+			"type": "8" 
+		},
+		{
+			"msg": "hello", 
+			"sendUserId": "1610801362600222722", 
+			"signFlag": "0", 
+			"acceptUserId": "1570565996438142977", 
+			"createTime": "1676017096617", 
+			"sendUser": {
+				"avatar": "https://qj-school.oss-cn-beijing.aliyuncs.com/2023-01-06/308fc78b738e490299eff8441d042086avatar.png", 
+				"userName": "chunshan", 
+				"userId": "1610801362600222722" 
+			}, 
+			"updateTime": "1676017096617", 
+			"id": "1623959522844082178", 
+			"type": "8" 
+		},
+		{
+			"msg": "hello", 
+			"sendUserId": "1610801362600222722", 
+			"signFlag": "1", 
+			"acceptUserId": "1570565996438142977", 
+			"createTime": "1676017077754", 
+			"sendUser": {
+				"avatar": "https://qj-school.oss-cn-beijing.aliyuncs.com/2023-01-06/308fc78b738e490299eff8441d042086avatar.png", 
+				"userName": "chunshan", 
+				"userId": "1610801362600222722" 
+			}, 
+			"updateTime": "1676017077754", 
+			"id": "1623959443705954305", 
+			"type": "8" 
+		},
+		{
+			"msg": "hello", 
+			"sendUserId": "1610801362600222722", 
+			"signFlag": "0", 
+			"acceptUserId": "1570565996438142977", 
+			"createTime": "1676016358378", 
+			"sendUser": {
+				"avatar": "https://qj-school.oss-cn-beijing.aliyuncs.com/2023-01-06/308fc78b738e490299eff8441d042086avatar.png", 
+				"userName": "chunshan", 
+				"userId": "1610801362600222722" 
+			}, 
+			"updateTime": "1676016358378", 
+			"id": "1623956426436902914", 
+			"type": "8" 
+		},
+		{
+			"msg": "hello", 
+			"sendUserId": "1610801362600222722", 
+			"signFlag": "0", 
+			"acceptUserId": "1570565996438142977", 
+			"createTime": "1676016136318", 
+			"sendUser": {
+				"avatar": "https://qj-school.oss-cn-beijing.aliyuncs.com/2023-01-06/308fc78b738e490299eff8441d042086avatar.png", 
+				"userName": "chunshan", 
+				"userId": "1610801362600222722" 
+			}, 
+			"updateTime": "1676016136318", 
+			"id": "1623955495062425602", 
+			"type": "8" 
+		},
+		{
+			"msg": "hello", 
+			"sendUserId": "1610801362600222722", 
+			"signFlag": "1", 
+			"acceptUserId": "1570565996438142977", 
+			"createTime": "1676016128291", 
+			"sendUser": {
+				"avatar": "https://qj-school.oss-cn-beijing.aliyuncs.com/2023-01-06/308fc78b738e490299eff8441d042086avatar.png", 
+				"userName": "chunshan", 
+				"userId": "1610801362600222722" 
+			}, 
+			"updateTime": "1676016128291", 
+			"id": "1623955461411524609", 
+			"type": "8" 
+		},
+		{
+			"msg": "hello", 
+			"sendUserId": "1610801362600222722", 
+			"signFlag": "1", 
+			"acceptUserId": "1570565996438142977", 
+			"createTime": "1676016076300", 
+			"sendUser": {
+				"avatar": "https://qj-school.oss-cn-beijing.aliyuncs.com/2023-01-06/308fc78b738e490299eff8441d042086avatar.png", 
+				"userName": "chunshan", 
+				"userId": "1610801362600222722" 
+			}, 
+			"updateTime": "1676016076300", 
+			"id": "1623955243341271042", 
+			"type": "8" 
+		},
+		{
+			"msg": "hello", 
+			"sendUserId": "1610801362600222722", 
+			"signFlag": "1", 
+			"acceptUserId": "1570565996438142977", 
+			"createTime": "1676015913839", 
+			"sendUser": {
+				"avatar": "https://qj-school.oss-cn-beijing.aliyuncs.com/2023-01-06/308fc78b738e490299eff8441d042086avatar.png", 
+				"userName": "chunshan", 
+				"userId": "1610801362600222722" 
+			}, 
+			"updateTime": "1676015913839", 
+			"id": "1623954561930432514", 
+			"type": "8" 
+		},
+		{
+			"msg": "hello", 
+			"sendUserId": "1610801362600222722", 
+			"signFlag": "1", 
+			"acceptUserId": "1570565996438142977", 
+			"createTime": "1676015594687", 
+			"sendUser": {
+				"avatar": "https://qj-school.oss-cn-beijing.aliyuncs.com/2023-01-06/308fc78b738e490299eff8441d042086avatar.png", 
+				"userName": "chunshan", 
+				"userId": "1610801362600222722" 
+			}, 
+			"updateTime": "1676015594687", 
+			"id": "1623953223314153473", 
+			"type": "8" 
+		},
+		{
+			"msg": "hello", 
+			"sendUserId": "1610801362600222722", 
+			"signFlag": "1", 
+			"acceptUserId": "1570565996438142977", 
+			"createTime": "1676015568989", 
+			"sendUser": {
+				"avatar": "https://qj-school.oss-cn-beijing.aliyuncs.com/2023-01-06/308fc78b738e490299eff8441d042086avatar.png", 
+				"userName": "chunshan", 
+				"userId": "1610801362600222722" 
+			}, 
+			"updateTime": "1676015568989", 
+			"id": "1623953115524734978", 
+			"type": "8" 
+		}
+	],
 	"usersearch-goods": {
 		"name": "typicode"
 	},
