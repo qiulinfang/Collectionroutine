@@ -1,6 +1,6 @@
 <template>
 	<view class="page">
-		<scroll-view class="scroll-view" scroll-y scroll-with-animation :scroll-top="top">
+		<scroll-view class="scroll-view" scroll-y scroll-with-animation :scroll-top="scrollTop" >
 			<view style="padding: 30rpx 30rpx 1rpx 30rpx;">
 				<view class="message-card" v-for="(item,index) in list" :key="index">
 					<view class="timestamp">
@@ -21,7 +21,7 @@
 			</view>
 		</scroll-view>
 		<view class="tool">
-			<input type="text" v-model="content" class="input" @confirm="send" />
+			<input type="text" v-model="tempMsg.text" class="input" @confirm="send" />
 			<image src="/static/logo.png" mode="widthFix" class="thumb" @click="chooseImage"></image>
 		</view>
 	</view>
@@ -157,7 +157,20 @@
 						status: "pending"
 					}
 				],
-				top: 0
+				scrollIntoViewId: '',
+				tempMsg: {
+					id: "msg_001",
+					senderId: "user_B",
+					receiverId: "user_A",
+					text: "",
+					media: null,
+					timestamp: Date.now(),
+					read: false,
+					deleted: false,
+					type: "text",
+					status: "pending"
+				},
+				scrollTop: 9999,
 			};
 		},
 		onLoad(options) {
@@ -168,23 +181,22 @@
 		},
 
 		methods: {
-			send() {
-				this.list.push({
-					content: this.content,
-					userType: 'self',
-					avatar: this._selfAvatar
-				})
-				this.content = ''
+			async send() {
+				this.list.push(JSON.parse(JSON.stringify(this.tempMsg)));
+				this.tempMsg.text = '';
+				this.scrollIntoViewId = 'message-' + (this.list.length - 1);
 				this.scrollToBottom()
-				// 模拟对方回复				
-				setTimeout(() => {
-					this.list.push({
-						content: '周末什么安排',
-						userType: 'friend',
-						avatar: this._friendAvatar
-					})
-					this.scrollToBottom()
-				}, 1500)
+				try {
+					const response = await this.sendToServer(this.tempMsg);
+					if (response.success) {
+						// message.status = "sent"; // 更新消息状态
+					} else {
+						console.error("Failed to send message.");
+					}
+				} catch (error) {
+					console.error("Error sending message:", error);
+				};
+
 			},
 			chooseImage() {
 				uni.chooseImage({
@@ -210,7 +222,11 @@
 				})
 			},
 			scrollToBottom() {
-				this.top = this.list.length * 1000
+            // 确保在DOM更新后设置scroll-top
+            this.$nextTick(() => {
+                // 将scroll-top设置为一个大数值以确保滚动到底部
+                this.scrollTop++;
+            });
 			},
 			convertUnixTimestampToDateString(timestamp) {
 				return new Intl.DateTimeFormat('default', {
@@ -221,7 +237,18 @@
 					minute: '2-digit',
 					second: '2-digit'
 				}).format(new Date(timestamp));
-			}
+			},
+			sendToServer(message) {
+				// 模拟发送消息到服务器的异步操作
+				return new Promise((resolve, reject) => {
+					setTimeout(() => {
+						resolve({
+							success: true,
+							message
+						});
+					}, 1000); // 模拟网络延迟
+				});
+			},
 		}
 	}
 </script>
