@@ -1,6 +1,6 @@
 <template>
 	<view class="page">
-		<scroll-view class="scroll-view" scroll-y scroll-with-animation :scroll-top="scrollTop" >
+		<scroll-view class="scroll-view" scroll-y scroll-with-animation :scroll-top="scrollTop">
 			<view style="padding: 30rpx 30rpx 1rpx 30rpx;">
 				<view class="message-card" v-for="(item,index) in list" :key="index">
 					<view class="timestamp">
@@ -21,6 +21,7 @@
 			</view>
 		</scroll-view>
 		<view class="tool">
+			<image src="/static/logo.png" mode="widthFix" class="thumb" @click="chooseImage"></image>
 			<input type="text" v-model="tempMsg.text" class="input" @confirm="send" />
 			<image src="/static/logo.png" mode="widthFix" class="thumb" @click="chooseImage"></image>
 		</view>
@@ -163,7 +164,11 @@
 					senderId: "user_B",
 					receiverId: "user_A",
 					text: "",
-					media: null,
+					media: {
+						url: "",
+						type: "",
+						size: 0,
+					},
 					timestamp: Date.now(),
 					read: false,
 					deleted: false,
@@ -183,8 +188,7 @@
 		methods: {
 			async send() {
 				this.list.push(JSON.parse(JSON.stringify(this.tempMsg)));
-				this.tempMsg.text = '';
-				this.scrollIntoViewId = 'message-' + (this.list.length - 1);
+				this.initializeMessage();
 				this.scrollToBottom()
 				try {
 					const response = await this.sendToServer(this.tempMsg);
@@ -196,37 +200,34 @@
 				} catch (error) {
 					console.error("Error sending message:", error);
 				};
-
 			},
 			chooseImage() {
 				uni.chooseImage({
 					//sourceType: 'album',
 					success: (res) => {
-						this.list.push({
-							content: res.tempFilePaths[0],
-							userType: 'self',
-							messageType: 'image',
-							avatar: this._selfAvatar
-						})
+						this.tempMsg.media.url = res.tempFilePaths[0];
+						this.tempMsg.type = 'image';
+						this.list.push(JSON.parse(JSON.stringify(this.tempMsg)));
+						this.initializeMessage();
 						this.scrollToBottom()
 						// 模拟对方回复						
-						setTimeout(() => {
-							this.list.push({
-								content: '你好呀，朋友~',
-								userType: 'friend',
-								avatar: this._friendAvatar
-							})
-							this.scrollToBottom()
-						}, 1500)
+						// setTimeout(() => {
+						// 	this.list.push({
+						// 		content: '你好呀，朋友~',
+						// 		userType: 'friend',
+						// 		avatar: this._friendAvatar
+						// 	})
+						// 	this.scrollToBottom()
+						// }, 1500)
 					}
 				})
 			},
 			scrollToBottom() {
-            // 确保在DOM更新后设置scroll-top
-            this.$nextTick(() => {
-                // 将scroll-top设置为一个大数值以确保滚动到底部
-                this.scrollTop++;
-            });
+				// 确保在DOM更新后设置scroll-top
+				this.$nextTick(() => {
+					// 将scroll-top设置为一个大数值以确保滚动到底部
+					this.scrollTop++;
+				});
 			},
 			convertUnixTimestampToDateString(timestamp) {
 				return new Intl.DateTimeFormat('default', {
@@ -249,6 +250,23 @@
 					}, 1000); // 模拟网络延迟
 				});
 			},
+			initializeMessage() {
+				this.tempMsg.id = "msg_001";
+				this.tempMsg.senderId = "user_B";
+				this.tempMsg.receiverId = "user_A";
+				this.tempMsg.text = "";
+				this.tempMsg.media = {
+					url: "",
+					type: "",
+					size: 0,
+				};
+				this.tempMsg.timestamp = 0;
+				this.tempMsg.read = false;
+				this.tempMsg.deleted = false;
+				this.tempMsg.type = "text";
+				this.tempMsg.status = "pending";
+			},
+			
 		}
 	}
 </script>
