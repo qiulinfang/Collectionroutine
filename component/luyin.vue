@@ -95,7 +95,7 @@
 <style scoped>
 	.record-button {
 		width: 100%;
-		height: 100px;
+		height: 100rpx;
 		background-color: #f0f0f0;
 		display: flex;
 		justify-content: center;

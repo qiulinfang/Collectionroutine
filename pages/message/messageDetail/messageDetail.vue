@@ -37,37 +37,37 @@
 					:duration="duration">
 					<swiper-item>
 						<view class="swiper-item uni-bg-red">
+							<view class="more-icon">
+								<image class="operation-icon" src="/static/logo.png"></image>
+								<view class="operation-title">商品</view>
+							</view>
+							<view class="more-icon">
+								<image @click="sendImageMessage()" class="operation-icon" src="/static/logo.png"></image>
+								<view class="operation-title">订单</view>
+							</view>
 							<view class="more-icon" @click="chooseImage">
-								<image  class="operation-icon" src="/static/logo.png"></image>
-								<view class="operation-title">图片</view>
+								<image @click="sendImageMessage()" class="operation-icon" src="/static/logo.png"></image>
+								<view class="operation-title">照片</view>
+							</view>
+							<view class="more-icon" @click="kaishipaishe = true">
+								<image class="operation-icon" src="/static/logo.png"></image>
+								<view class="operation-title">拍摄</view>
 							</view>
 							<view class="more-icon">
 								<image @click="sendImageMessage()" class="operation-icon" src="/static/logo.png"></image>
-								<view class="operation-title">图片</view>
+								<view class="operation-title">红包</view>
 							</view>
 							<view class="more-icon">
 								<image @click="sendImageMessage()" class="operation-icon" src="/static/logo.png"></image>
-								<view class="operation-title">图片</view>
+								<view class="operation-title">位置</view>
 							</view>
 							<view class="more-icon">
 								<image @click="sendImageMessage()" class="operation-icon" src="/static/logo.png"></image>
-								<view class="operation-title">图片</view>
+								<view class="operation-title">投诉</view>
 							</view>
 							<view class="more-icon">
 								<image @click="sendImageMessage()" class="operation-icon" src="/static/logo.png"></image>
-								<view class="operation-title">图片</view>
-							</view>
-							<view class="more-icon">
-								<image @click="sendImageMessage()" class="operation-icon" src="/static/logo.png"></image>
-								<view class="operation-title">图片</view>
-							</view>
-							<view class="more-icon">
-								<image @click="sendImageMessage()" class="operation-icon" src="/static/logo.png"></image>
-								<view class="operation-title">图片</view>
-							</view>
-							<view class="more-icon">
-								<image @click="sendImageMessage()" class="operation-icon" src="/static/logo.png"></image>
-								<view class="operation-title">图片</view>
+								<view class="operation-title">语音通话</view>
 							</view>
 						</view>
 					</swiper-item>
@@ -75,30 +75,28 @@
 						<view class="swiper-item uni-bg-green">B</view>
 					</swiper-item>
 				</swiper>
-
-			</view>
-			<view class="drawer" v-if="drawerisOpen" :class="{ 'drawer--open': drawerisOpen }">
-				<div class="drawer__overlay" @click="closeDrawer"></div>
-				<div class="drawer__content">
-					<slot></slot> <!-- 这里放置抽屉的内容 -->
-					<button class="drawer__close-button" @click="closeDrawer">Close</button>
-				</div>
 			</view>
 		</view>
+		<div v-if="drawerisOpen" class="drawer__overlay"  @click="closeDrawer">
+			<luyin></luyin>
+		</div>
+		<view v-if="kaishipaishe" class="photoandvideocontainer">
+			<photoandvideo  @message-sent="handleMessage" @getVideotempImagePath="savePath(message)" @getPhototempImagePath="savePath(message)" ></photoandvideo>
+		</view>
 	</view>
-	<div class="drawer__overlay" v-if="drawerisOpen" @click="closeDrawer">
-		<luyin></luyin>
-	</div>
 </template>
 <script>
 	import luyin from '/component/luyin.vue';
+	import photoandvideo from '/component/photoandvideo.vue';
 
 	export default {
 		components: {
-			luyin
+			luyin,
+			photoandvideo
 		},
 		data() {
 			return {
+				kaishipaishe: false,
 				emojiOpen: false,
 				background: ['color1', 'color2', 'color3'],
 				indicatorDots: true,
@@ -326,6 +324,7 @@
 					}, 1000); // 模拟网络延迟
 				});
 			},
+
 			initializeMessage() {
 				this.tempMsg.id = "msg_001";
 				this.tempMsg.senderId = "user_B";
@@ -347,214 +346,231 @@
 			},
 			closeDrawer() {
 				this.drawerisOpen = !this.drawerisOpen;
+			},
+			handleMessage(message) {
+				this.kaishipaishe = false;
+			},
+			savePath(message){
+				this.tempMsg.media.url = message;
 			}
 		}
 	}
 </script>
 <style lang="scss" scoped>
-	.scroll-view {
-		/* #ifdef H5 */
-		height: calc(100vh - 44px - 100rpx);
-		/* #endif */
-		/* #ifndef H5 */
-		height: 100vh - 120rpx;
-		/* #endif */
-		background: #eee;
-		box-sizing: border-box;
-	}
-
-	.scroll-view.up {
-		transform: translateY(-400rpx);
-	}
-
-	.message-card {
-		.timestamp {
-			text-align: center;
-			margin-bottom: 13rpx;
-			font-size: 28rpx;
-		}
-
-		.message {
-			display: flex;
-			align-items: flex-start;
-			margin-bottom: 30rpx;
-
-			.status {
-				font-size: 28rpx;
-				align-self: flex-end;
-				margin-right: 10rpx;
-			}
-
-			.avatar {
-				width: 80rpx;
-				height: 80rpx;
-				border-radius: 10rpx;
-				margin-right: 30rpx;
-			}
-
-			.content {
-				box-sizing: border-box;
-				min-height: 80rpx;
-				max-width: 60vw;
-				padding: 20rpx;
-				border-radius: 10rpx;
-				font-size: 28rpx;
-				line-height: 1.3;
-				background: #fff;
-				word-break: break-all;
-				/* 同上，但更现代的标准 */
-
-				image {
-					width: 200rpx;
-				}
-			}
-
-
-			&.user_B {
-				justify-content: flex-end;
-
-				.avatar {
-					margin: 0 0 0 30rpx;
-				}
-
-				.content {
-					position: relative;
-
-					&::after {
-						position: absolute;
-						content: '';
-						width: 0;
-						height: 0;
-						border: 16rpx solid transparent;
-						border-left: 16rpx solid #fff;
-						right: -28rpx;
-						top: 24rpx;
-					}
-				}
-			}
-
-			&.user_A {
-				.content {
-					position: relative;
-
-					&::after {
-						position: absolute;
-						content: '';
-						width: 0;
-						height: 0;
-						border: 16rpx solid transparent;
-						border-right: 16rpx solid #fff;
-						left: -28rpx;
-						top: 24rpx;
-					}
-				}
-			}
-		}
-
-	}
-
-	.fsdsd {
-		position: fixed;
-		bottom: 0rpx;
-		left: 0;
-		right: 0;
-		background-color: #fff;
-		display: flex;
-		flex-direction: column;
-		min-height: 100rpx;
-		padding-bottom: calc(20rpx + constant(safe-area-inset-bottom)/2) !important;
-		padding-bottom: calc(20rpx + env(safe-area-inset-bottom)/2) !important;
-
-		.tool {
-			display: flex;
-			align-items: center;
-
-
-			.thumb {
-				width: 64rpx;
-			}
-
-			.input {
-				background: #eee;
-				border-radius: 10rpx;
-				height: 70rpx;
-				margin-right: 30rpx;
-				flex: 1;
-				padding: 0 20rpx;
-				box-sizing: border-box;
-				font-size: 28rpx;
-			}
-
-			.collapse-panel {
-				display: flex;
-
-				.collapse-header {
-					box-sizing: border-box;
-					height: 100rpx;
-					width: 300rpx;
-					/* background-color: aquamarine; */
-					padding: 0.5rem;
-					cursor: pointer;
-				}
-			}
-		}
-
-		.collapse-content {
+	.page {
+		.scroll-view {
+			/* #ifdef H5 */
+			height: calc(100vh - 44px - 100rpx);
+			/* #endif */
+			/* #ifndef H5 */
+			height: calc(100vh - 120rpx);
+			/* #endif */
+			background: #eee;
 			box-sizing: border-box;
-			height: 400rpx;
-			padding: 0.5rem;
-			background-color: #fff;
 
-			.swiper {
-				height: 400rpx;
-				background-color: greenyellow;
-
-				.swiper-item {
-					display: block;
-					height: 100rpx;
-					width: 100%;
-					line-height: 100rpx;
+			.message-card {
+				.timestamp {
 					text-align: center;
-					display: grid;
-					grid-template-columns: repeat(4, 1fr);
-					/* 创建四列，每列占相等的空间 */
-					grid-template-rows: repeat(2, auto);
-					/* 创建两行，行的高度根据内容自动调整 */
-					grid-gap: 10rpx;
-					/* 在网格项目之间添加间距 */
-					place-items: center;
-					/* 水平和垂直居中所有 .grid-item */
-					height: 400rpx;
-					background-color: wheat;
+					margin-bottom: 13rpx;
+					font-size: 28rpx;
+				}
 
-					.more-icon {
-						width: 100rpx;
-						width: 100rpx;
-						overflow: hidden;
-						display: flex;
-						flex-direction: column;
-						justify-content: center;
-						align-items: center;
+				.message {
+					display: flex;
+					align-items: flex-start;
+					margin-bottom: 30rpx;
+
+					.status {
+						font-size: 28rpx;
+						align-self: flex-end;
+						margin-right: 10rpx;
+					}
+
+					.avatar {
+						width: 80rpx;
+						height: 80rpx;
+						border-radius: 10rpx;
+						margin-right: 30rpx;
+					}
+
+					.content {
 						box-sizing: border-box;
-						width: 140rpx;
-						height: 140rpx;
+						min-height: 80rpx;
+						max-width: 60vw;
+						padding: 20rpx;
+						border-radius: 10rpx;
+						font-size: 28rpx;
+						line-height: 1.3;
+						background: #fff;
+						word-break: break-all;
+						/* 同上，但更现代的标准 */
 
 						image {
-							width: 50rpx;
-							height: 50rpx;
+							width: 200rpx;
+						}
+					}
+
+
+					&.user_B {
+						justify-content: flex-end;
+
+						.avatar {
+							margin: 0 0 0 30rpx;
+						}
+
+						.content {
+							position: relative;
+
+							&::after {
+								position: absolute;
+								content: '';
+								width: 0;
+								height: 0;
+								border: 16rpx solid transparent;
+								border-left: 16rpx solid #fff;
+								right: -28rpx;
+								top: 24rpx;
+							}
+						}
+					}
+
+					&.user_A {
+						.content {
+							position: relative;
+
+							&::after {
+								position: absolute;
+								content: '';
+								width: 0;
+								height: 0;
+								border: 16rpx solid transparent;
+								border-right: 16rpx solid #fff;
+								left: -28rpx;
+								top: 24rpx;
+							}
+						}
+					}
+				}
+
+			}
+
+		}
+
+		.scroll-view.up {
+			transform: translateY(-400rpx);
+		}
+
+		.fsdsd {
+			position: fixed;
+			bottom: 0rpx;
+			left: 0;
+			right: 0;
+			background-color: #fff;
+			display: flex;
+			flex-direction: column;
+			min-height: 100rpx;
+			padding-bottom: calc(20rpx + constant(safe-area-inset-bottom)/2) !important;
+			padding-bottom: calc(20rpx + env(safe-area-inset-bottom)/2) !important;
+
+			.tool {
+				display: flex;
+				align-items: center;
+
+
+				.thumb {
+					width: 64rpx;
+				}
+
+				.input {
+					background: #eee;
+					border-radius: 10rpx;
+					height: 70rpx;
+					margin-right: 30rpx;
+					flex: 1;
+					padding: 0 20rpx;
+					box-sizing: border-box;
+					font-size: 28rpx;
+				}
+
+				.collapse-panel {
+					display: flex;
+
+					.collapse-header {
+						box-sizing: border-box;
+						height: 100rpx;
+						width: 300rpx;
+						/* background-color: aquamarine; */
+						padding: 0.5rem;
+						cursor: pointer;
+					}
+				}
+			}
+
+			.collapse-content {
+				box-sizing: border-box;
+				height: 400rpx;
+				padding: 0.5rem;
+				background-color: #fff;
+
+				.swiper {
+					height: 400rpx;
+					background-color: greenyellow;
+
+					.swiper-item {
+						display: block;
+						height: 100rpx;
+						width: 100%;
+						line-height: 100rpx;
+						text-align: center;
+						display: grid;
+						grid-template-columns: repeat(4, 1fr);
+						/* 创建四列，每列占相等的空间 */
+						grid-template-rows: repeat(2, auto);
+						/* 创建两行，行的高度根据内容自动调整 */
+						grid-gap: 10rpx;
+						/* 在网格项目之间添加间距 */
+						place-items: center;
+						/* 水平和垂直居中所有 .grid-item */
+						height: 400rpx;
+						background-color: wheat;
+
+						.more-icon {
+							width: 100rpx;
+							width: 100rpx;
+							overflow: hidden;
+							display: flex;
+							flex-direction: column;
+							justify-content: center;
+							align-items: center;
+							box-sizing: border-box;
+							width: 140rpx;
+							height: 140rpx;
+
+							image {
+								width: 50rpx;
+								height: 50rpx;
+							}
 						}
 					}
 				}
 			}
 		}
-	}
 
-	.drawer__overlay {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		background-color: rgba(0, 0, 0, 0.5);
+		.drawer__overlay {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(0, 0, 0, 0.5);
+		}
+
+		.photoandvideocontainer {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
 	}
 </style>

@@ -8,11 +8,11 @@
 						<image v-else src="/static/images/defaultAvatar.jpg" fit="aspectFill" class="user-info-avatar"></image>
 					</view>
 					<view class="nichengheid">
-						<view  v-if="isLoggedIn" class="id-num-box">
+						<view v-if="isLoggedIn" class="id-num-box">
 							<view class="user-name">齐家网</view>
 							<view class="user-ids">ID：100019</view>
 						</view>
-						<view v-else class="login-container"  @click="goToLogin">
+						<view v-else class="login-container" @click="goToLogin">
 							<text class="login-btn">未登录</text>
 						</view>
 					</view>
@@ -90,7 +90,7 @@
 			</view>
 		</view>
 	</uni-popup>
-
+	<button @click="goToTest">跳转到test页</button>
 </template>
 
 <script>
@@ -178,7 +178,7 @@
 							// },
 							success: (res) => {
 								if (res.statusCode === 200) {
-									console.log("请求成功",res.data[0]);
+									console.log("请求成功", res.data[0]);
 									this.userInfo = res.data[0];
 								}
 							},
@@ -194,6 +194,11 @@
 			goToLogin() {
 				uni.navigateTo({
 					url: '/pages/login/login'
+				});
+			},
+			goToTest() {
+				uni.navigateTo({
+					url: '/component/test/test'
 				});
 			},
 			logout() {

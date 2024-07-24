@@ -2,10 +2,10 @@
 	<view class="camera-page">
 		<button class="reset" @click="reset">重置</button>
 		<view class="camera">
-			<camera class="cameraitem" v-if="shiji === 'before'" device-position="back" flash="off" @error="error"></camera>
-			<img v-if="shiji === 'after' && dao === 'photo'"  class="cameraitem" src="/static/20240723124604.png" alt="" />
-			<video v-if="shiji === 'after' && dao === 'movie'"  class="cameraitem" src="/static/20240724172958.mp4"
-				style="margin-top: 100rpx;"></video>
+			<camera v-if="shiji === 'before'" device-position="back" flash="off" @error="error"></camera>
+			<img v-if="shiji === 'after' && dao === 'photo'" class="editMovie" src="/static/20240723124604.png" alt="" />
+			<video v-if="shiji === 'after' && dao === 'movie'" src="/static/20240724172958.mp4"
+				style="margin-top: 555rpx;"></video>
 		</view>
 		<view class="tool">
 			<button v-if="shiji === 'before'" class="button" @touchstart="onButtonTouchStart" @touchend="onButtonTouchEnd"
@@ -118,11 +118,6 @@
 
 		.camera {
 			height: 80%;
-			
-			.cameraitem{
-				height: 100%;
-				width: 100%;
-			}
 		}
 
 		.tool {
