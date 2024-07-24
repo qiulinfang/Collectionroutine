@@ -1,116 +1,108 @@
-<!-- 录音按钮组件 -->
+<!-- components/BottomDrawer/index.vue -->
+
 <template>
-  <view :class="['record-button', { 'recording': isRecording, 'canceled': canceled }]"
-        @touchstart="handleTouchStart"
-        @touchmove="handleTouchMove"
-        @touchend="handleTouchEnd">
-    {{ recordingStatus }}
-  </view>
+	<view class="uni-margin-wrap">
+		<swiper class="swiper" circular :indicator-dots="indicatorDots" :autoplay="autoplay" :interval="interval"
+			:duration="duration">
+			<swiper-item>
+				<view class="swiper-item uni-bg-red">
+					<view class="more-icon">
+						<image @click="sendImageMessage()" class="operation-icon" src="/static/logo.png"></image>
+						<view class="operation-title">图片</view>
+					</view>
+					<view class="more-icon">
+						<image @click="sendImageMessage()" class="operation-icon" src="/static/logo.png"></image>
+						<view class="operation-title">图片</view>
+					</view>
+					<view class="more-icon">
+						<image @click="sendImageMessage()" class="operation-icon" src="/static/logo.png"></image>
+						<view class="operation-title">图片</view>
+					</view>
+					<view class="more-icon">
+						<image @click="sendImageMessage()" class="operation-icon" src="/static/logo.png"></image>
+						<view class="operation-title">图片</view>
+					</view>
+					<view class="more-icon">
+						<image @click="sendImageMessage()" class="operation-icon" src="/static/logo.png"></image>
+						<view class="operation-title">图片</view>
+					</view>
+					<view class="more-icon">
+						<image @click="sendImageMessage()" class="operation-icon" src="/static/logo.png"></image>
+						<view class="operation-title">图片</view>
+					</view>
+					<view class="more-icon">
+						<image @click="sendImageMessage()" class="operation-icon" src="/static/logo.png"></image>
+						<view class="operation-title">图片</view>
+					</view>
+					<view class="more-icon">
+						<image @click="sendImageMessage()" class="operation-icon" src="/static/logo.png"></image>
+						<view class="operation-title">图片</view>
+					</view>
+				</view>
+			</swiper-item>
+			<swiper-item>
+				<view class="swiper-item uni-bg-green">B</view>
+			</swiper-item>
+		</swiper>
+	</view>
 </template>
 
 <script>
-export default {
-  data() {
-    return {
-      isRecording: false,
-      recordingStatus: '长按开始录音',
-      touchStartY: 0,
-      touchEndY: 0,
-      slideDistance: 0,
-      threshold: 50, // 滑动距离阈值，单位像素
-      canceled: false,
-      recorderManager: uni.getRecorderManager(),
-      recordingTask: null,
-    };
-  },
-  methods: {
-    handleTouchStart(e) {
-      this.canceled = false; // 重置取消状态
-      this.touchStartY = e.touches[0].clientY;
-      this.isRecording = true;
-      this.recordingStatus = '正在录音';
-      this.startRecording();
-    },
-    
-    handleTouchMove(e) {
-      if (!this.isRecording) return;
-      this.touchEndY = e.touches[0].clientY;
-      this.slideDistance = Math.abs(this.touchEndY - this.touchStartY);
-      
-      if (this.slideDistance > this.threshold && this.touchEndY < this.touchStartY) {
-        this.recordingStatus = '松开按钮取消录音';
-				this.canceled = true;
-      } else {
-        this.recordingStatus = '正在录音';
-				this.canceled = false;
-      }
-    },
-    
-    handleTouchEnd(e) {
-      this.touchEndY = e.changedTouches[0].clientY;
-      this.handleTouchCancel(e); // 使用同一函数处理结束和取消
-    },
-    
-    handleTouchCancel(e) {
-      this.isRecording = false;
-      this.slideDistance = Math.abs(this.touchEndY - this.touchStartY);
-      
-      if (this.slideDistance <= this.threshold) {
-        this.recordingTask && this.recordingTask.stop();
-				this.recordingStatus= '长按开始录音';
-        this.onRecordingStopped();
-      } else {
-        this.recordingTask && this.recordingTask.abort();
-				this.recordingStatus= '长按开始录音';
-        this.canceled = false;
-        this.onRecordingCanceled();
-      }
-    },
-    
-    startRecording() {
-      this.recordingTask = this.recorderManager.start({
-        duration: 60000, // 设置录音时长上限，例如60秒
-      });
-      this.recordingTask.onStart(() => {
-        console.log('录音开始');
-      });
-    },
-    
-    onRecordingStopped() {
-      this.recordingTask.onStop((res) => {
-        console.log('录音结束', res);
-        // 发送录音文件到服务器或其他处理
-        this.recordingStatus = '录音已保存';
-      });
-    },
-    
-    onRecordingCanceled() {
-      this.recordingTask.onStop(() => {
-        console.log('录音被取消');
-        this.recordingStatus = '录音已取消';
-      });
-    }
-  },
-};
+	export default {
+		props: {
+			visible: {
+				type: Boolean,
+				default: false
+			}
+		},
+		data() {
+			return ({
+				background: ['color1', 'color2', 'color3'],
+				indicatorDots: true,
+				autoplay: false,
+				interval: 2000,
+				duration: 500
+			})
+		},
+		methods: {
+			closeDrawer() {
+				this.visible = !this.visible;
+			}
+		}
+	};
 </script>
 
 <style scoped>
-.record-button {
-  width: 100%;
-  height: 100px;
-  background-color: #f0f0f0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 20px;
-  transition: background-color 0.3s;
-}
+	.swiper {
+		height: 400rpx;
+	}
 
-.recording {
-  background-color: #ffcc00;
-}
+	.swiper-item {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		/* 创建四列，每列占相等的空间 */
+		grid-template-rows: repeat(2, auto);
+		/* 创建两行，行的高度根据内容自动调整 */
+		grid-gap: 10rpx;
+		/* 在网格项目之间添加间距 */
+		place-items: center; /* 水平和垂直居中所有 .grid-item */
+		height: 400rpx;
+		background-color: wheat;
+	}
 
-.canceled {
-  background-color: #ff0000;
-}
+	.more-icon {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		box-sizing: border-box;
+		width: 140rpx;
+		height: 140rpx;
+	}
+
+
+	image {
+		width: 70rpx;
+		height: 70rpx;
+	}
 </style>
